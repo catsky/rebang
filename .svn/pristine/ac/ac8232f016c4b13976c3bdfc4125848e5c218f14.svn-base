@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block main %}
+
+<!-- block content -->
+
+   <div>
+    <article class="hentry" role="article">
+        <header>
+            <h1 class="entry-title">Download</h1>
+        </header>
+
+        <div class="entry-content" id="postcondiv"><p><h3>sae-flask-blog</h3>github地址:<a href="https://github.com/javalurker/sae-flask-blog" target="_blank">https://github.com/javalurker/sae-flask-blog</a><br>googlecode:<a href="https://code.google.com/p/sae-flask-blog" target="_blank">https://code.google.com/p/sae-flask-blog</a><br>本地下载：<a href="http://chartnet-upload.stor.sinaapp.com/c-house.rar" target="_blank">c-house.rar</a><br>是一款运行在SAE/python上轻型的、基于FLASK框架的blog程序。<br>版本号为v0.0.1，示例 http://chartnet.sinaapp.com/<br>此项目是基于新浪的sae平台开发，采用FLASK框架，参照SAEpy-log进行了重写。<br>由于本人初步使用和学习PYTHON及FLASK，代码中会存在很多不合理的地方。</p><p><h3>使用到的部分技术：</h3>python+flask+sae：系统构建的基石<br>数据库访问：sqlalchemy，使用了flask-sqlalchemy扩展<br>jquery+timeline+markitup+highlight：界面展现的相关组件，timeline作为博文的时间线组件，markitup为在线编辑器，highlight为高亮显示（Sunburst风格）。<br>timeline：http://timeline.verite.co/<br>markitup：http://markitup.jaysalvat.com/home/<br>highlight：http://softwaremaniacs.org/soft/highlight/en/<br>摘要截取：采用正则表达式<br>附件上传：uploadify  v2.1.4<br>附件存储：sae storage<br>图片压缩：PIL模块</p><p><h3>已实现的功能：</h3>日志的添加、修改、删除、浏览<br>日志信息的评论添加<br>评论管理<br>后台管理的登陆</p><p><h3>未来想实现及优化的功能：</h3>包含图片的日志，上下滚动页面，响应速度缓慢的问题。<br>类别及标签的翻页<br>相册功能</p></div>
+        <footer>
+            <p class="meta grey">
+                <span>Posted by <strong>javalurker</strong></span> |
+
+                <span class="categories greyhref">
+                    position:
+                    <a href="/download" rel="category tag">download</a>
+                </span>
+            </p>
+            
+        </footer>
+    </article>
+
+</div>
+
+{% endblock %}

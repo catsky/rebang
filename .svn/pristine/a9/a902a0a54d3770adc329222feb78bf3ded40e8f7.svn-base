@@ -1,0 +1,28 @@
+{% extends "admin/layout_admin.html" %}
+{% block content %}
+<h2>{{ title }}</h2>
+
+<form action="/admin/links" method="post">
+<p>
+{% if obj %}
+Name: <input type="text" name="name" value="{{obj.name}}" size="22" tabindex="1" />
+Sort: <input type="text" name="sort" value="{{obj.displayorder}}" size="10" tabindex="2" /><br />
+URL: <input type="text" name="url" value="{{obj.url}}" size="46" tabindex="3" /> 
+<input type='hidden' value='edit' name='act' />
+<input type='hidden' value='{{obj.id}}' name='id' />
+{% else %}
+Name: <input type="text" name="name" value="" size="22" tabindex="1" />
+Sort: <input type="text" name="sort" value="0" size="10" tabindex="2" /><br />
+URL: <input type="text" name="url" value="" size="46" tabindex="3" /> 
+<input type='hidden' value='add' name='act' />
+{% endif %}
+<input type="submit" class="bigbtn" tabindex="4" value=" Submit " /></p>
+</form>
+<br />
+<h2>友情链接列表</h2>
+<ul>
+{% for i in objs %}
+<li><a href="{{i.url}}" title="Link to {{i.url}}" target="_blank">{{i.name}}</a> ( <a href="/admin/links?id={{i.id}}&act=edit">Edit</a> | <a href="/admin/links?id={{i.id}}&act=del">Delete</a> )</li>
+{% endfor %}
+</ul>
+{% endblock %}

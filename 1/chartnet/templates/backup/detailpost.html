@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% block main %}
+
+<!-- block content -->
+
+   <div>
+    <article class="hentry" role="article">
+        <header>
+            <h1 class="entry-title">{{obj._title}}</h1>
+            <p class="meta">
+                <small>Admin at {{add_time}} in {{obj._category}}
+                <a href="http://saepy.sinaapp.com/topic/47/about#comments" title="Comment on {{obj._title}}" class="count">{{obj._comment_num}}</a>
+                </small>
+            </p>
+
+        </header>
+
+        <div class="entry-content" id="postcondiv">{{obj._content|safe}}</div>
+        <footer>
+            
+            <div  style="display:block;margin-bottom:20px;">
+            <!-- JiaThis Button BEGIN -->
+            <!-- <div id="jiathis_style_32x32"><span class="jiathis_txt">分享到：</span> -->
+            <!-- <a class="jiathis_button_tsina"></a> -->
+            <!-- <a class="jiathis_button_ishare"></a> -->
+            <!-- <a class="jiathis_button_renren"></a> -->
+            <!-- <a class="jiathis_button_baidu"></a> -->
+            <!-- <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a> -->
+            <!-- </div> -->
+            <script type="text/javascript" >
+            var jiathis_config={
+            summary:"",
+            hideMore:false
+            }
+            </script>
+            <script type="text/javascript" src="http://v2.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+            <!-- JiaThis Button END -->
+            <div class="c"></div>
+            </div>            
+            
+            
+            <div class="topline greyhref grey">
+			{% if _newer %}
+            Newer &rsaquo; <a href="/detailpost/{{_newer._id}}" rel="prev">{{ _newer._title }}</a>
+			{% endif %}
+            <br/> 
+			{% if _older %}
+            Older &rsaquo; <a href="/detailpost/{{_older._id}}" rel="next">{{ _older._title }}</a> 
+			{% endif %}
+            </div>
+            
+        </footer>
+    </article>
+    
+    <a name="comments"></a>
+    <section>
+        <h1 class="topline">Comments</h1>
+        <div id="comments">
+            <h2 class="comments">There are {{ comLen }} Comments to "{{obj._title}}"</h2>
+            <ul class="singlecomments" id="commentlist">
+            
+<a name="r233"></a>
+{% for comment in comments %}
+<li id="comment-233"> 
+    <div> 
+        <div> 
+        <img alt='' src="http://www.gravatar.com/avatar/2096cfb89f3dd725f4bee7e5353d62a0?s=48&d=monsterid" class='avatar' height='48' width='48' />
+        <div class="fl">
+        {{ comment.author }}
+        <span class="grey">says:</span>  <br/><em class="grey"><a href="http://saepy.sinaapp.com/t/47#r233">{{ comment.add_time }}</a></em>
+        </div>
+        <div class="fr"> <span class="comment-rating" style="margin-left:2px;"><a href="#respond" onclick="reply('233','guest')">Reply</a></div>
+        <div class="c"></div>
+        </div> 
+        <em>{{ comment.content }}</em>
+         
+    </div>
+</li> 
+{% endfor %}
+            </ul>
+        </div>
+    </section>
+   
+    <!-- new comment -->
+    <section>
+    <div id="respond" class="topline">
+    
+<h2 class="respond">Write a Comment</h2>
+<form action="/detailpost/{{post_id}}" method="post" id="commentform">
+    <p>
+    <input type="text" id="author" name="author" placeholder="First and last name" required tabindex="1" /> 
+    <label for="name">* Name (required)</label> 
+    </p>
+    <p> 
+    <input type="text" id="email" name="email" placeholder="example@domain.com" required tabindex="2" /> 
+    <label for="email">* Email (required, not published)</label>
+    </p>
+    <p> 
+    <input type="text" id="url" name="url" placeholder="http://www.yourdomain.com" tabindex="3" /> 
+    <label for="email">Website (Optional)</label>
+    </p>
+    <p><label for="comment">* Your Message (required) 10~500s</label> </p>
+    <textarea name="comment" id="commentbox" tabindex="4"></textarea> 
+    <p>
+    <input name="submit1" class="submit" type="button" id="submit1" tabindex="5" value="Submit Comment" /> 
+    </p>
+    
+    <input type='hidden' value='47' id='postkeyname' /> 
+    <input type='hidden' value='' id='toid' />
+    <p id="text"></p>
+
+</form>
+    </div>
+    </section>
+
+</div>
+<script src="/static/jquery-plugin/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+<script>
+function testReg(reg,str){
+    return reg.test(str);
+}
+
+$('#submit1').click(function(){
+    var emailreg = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/g;
+    var urlreg = /^http:\/\/.+\..+/;
+    var email = $('#email').val();
+    var url = $('#url').val();
+    var con = $('#commentbox').val();
+    var author = $('#author').val();
+    
+    if(author.length< 1 || author.length > 30){
+        $('#author').focus();
+        return;
+    }
+        
+    if(!testReg(emailreg,email)){
+        $('#email').focus();
+        return;
+    }
+    if(url.length>0){
+        if(!testReg(urlreg,url)){
+            $('#url').focus();
+            return;
+        }
+    }
+    if(con.length< 10 || con.length > 500){
+        $('#commentbox').focus();
+        return;
+    }
+        
+    $('#submit1').attr('disabled', 'disabled');
+    $('#text').html("Sending now.....");
+    
+    $.cookie('author', author, { expires: 365, path: '/' });
+    $.cookie('email', email, { expires: 365, path: '/' });
+    $.cookie('url', url, { expires: 365, path: '/' });
+	$('#commentform').submit();    
+});
+
+function reply(toid, name){
+    var ct = $('#commentbox');
+    ct.focus();
+    ct.val('@'+name + ' ' + ct.val());
+    $('#toid').val(toid);
+    return false;
+}
+</script>
+
+<link rel="stylesheet" title="Sunburst" href="/static/highlight/sunburst.min.css">
+<script src="/static/highlight/highlight.min.js"></script>
+<script>
+  hljs.tabReplace = '    ';
+  hljs.initHighlightingOnLoad();
+</script>
+{% endblock %}

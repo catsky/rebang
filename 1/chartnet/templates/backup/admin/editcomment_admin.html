@@ -1,0 +1,45 @@
+{% extends "admin/layout_admin.html" %}
+{% block content %}
+<h2>管理评论</h2>
+{% if obj %}
+<form action="" method="post" id="commentform">
+    <input type="text" name="author" value="#{obj.author}" size="22" tabindex="1" />
+	<label for="author">Name (required)</label>
+	<p><input type="text" name="email" value="#{obj.email}" size="22" tabindex="2" />
+	<label for="email">Email (required)</label></p>
+	<p><input type="text" name="url" value="#{obj.url}" size="22" tabindex="3" />
+	<label for="url">Website</label></p>
+	<p><textarea id="commentbox" name="content" cols="10" rows="10" tabindex="4">#{obj.content}</textarea></p>
+    <?py ck = ['','checked'] ?>
+    <p><label>显示本条评论 <input type="checkbox" name="visible" value="True" tabindex="5" #{ck[obj.visible]} /></label></p>
+    <input type="submit" id="submit" class="submitbtn" tabindex="5" value="Submit Edit Comment" />
+</form>
+{% endif %}
+
+<form action="" method="post">
+<p>
+输入要编辑的评论 id <input type="text" value="" name="id" size="10" />
+<input type='hidden' value='editcomments' name='act' />
+<input type="submit" value=" 提 交 " name="submit" />
+</p>
+<p>如何知道评论id？每条评论的发表时间的连接网址如下，红色的字就是该文章的id：</p>
+<p>http://chartnet.sinaapp.com/detailpost/<span class="red">12</span></p>
+</form>
+
+<?py #endif ?>
+{% if comments %}
+<br/><br/>
+
+<h3>以下是最新 #{{RECENT_COMMENT_NUM}} 条评论</h3>
+{% for cobj in comments %}
+<hr />
+<h3>{{cobj.author}}({{cobj.email}})</h3> 
+<img alt='' src="http://www.gravatar.com/avatar/2096cfb89f3dd725f4bee7e5353d62a0?s=48&d=monsterid" class='avatar' height='48' width='48' />
+<p>id: {{cobj.id}}</p>
+<p>{{cobj.content}}</p>
+<p>{{cobj.add_time}} ( <a href="/admin/comment?act=del&commentid={{cobj.id}}&post_id={{cobj.postid}}">删除</a> )</p>
+<p><a href="/detailpost/{{cobj.postid}}" target="_blank">在文章中查看该评论</a></p>
+{% endfor %}
+{% endif %}
+{% endblock %}
+

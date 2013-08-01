@@ -1,0 +1,25 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title}</div>
+<div class="main-box">
+<p class="red">
+<?py for each in errors: ?>
+› #{each} <br/>
+<?py #endfor ?>
+</p>
+<?py if wb_avatar_large: ?>
+<p>已成功读取你的QQ空间头像，作为默认头像 => <a href="/">就用这个头像了！</a><br/>
+<img src="#{wb_avatar_large}" /><br/><br/>
+你也可以上传其它头像:<br/>
+</p>
+<?py else: ?>
+<?py     if int(cur_user['flag']) >1: ?>
+<p>当前头像：<br/><img src="#{{AVATAR_URL}}#{cur_user['name']}.jpg?#{cur_time()}"/></p>
+<?py     #endif ?>
+<?py #endif ?>
+
+<form action="/setavatar" enctype="multipart/form-data" method="post">
+<p>选择头像图片 > <input name="myfile" type="file"> </p>
+<p><input type="submit" value=" 上 传 " name="submit" class="textbtn" /></p>
+</form>
+<p>&nbsp;</p>
+<p>注：当更换新的头像时，由于缓存，你的头像可能暂时保持原来的。</p>
+</div>

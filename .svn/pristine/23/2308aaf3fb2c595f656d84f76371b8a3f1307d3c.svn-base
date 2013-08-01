@@ -1,0 +1,25 @@
+<?py for topic in topic_objs: ?>
+    <div class="post-list">
+        <div class="item-avatar"><a href="/member/#{topic.author}">
+        <?py if request.is_spider: ?>
+        <img src="#{{AVATAR_URL}}#{topic.author}.jpg!normal" alt="#{topic.author}" />
+        <?py else: ?>
+        <img src="/static/grey.gif" data-original="#{{AVATAR_URL}}#{topic.author}.jpg!normal" alt="#{topic.author}" />
+        <?py #endif ?>
+        </a></div>
+        <div class="item-content">
+            <h1><a href="/goto/#{topic.key().name()}">#{topic.title}</a></h1>
+            <span class="item-date"><a href="/n-#{topic.node.id}">#{topic.node.name}</a>  •  <a href="/member/#{topic.author}">#{topic.author}</a>    
+            <?py if topic.reply: ?>
+            •  #{date_web(topic.edit)} •  最后回复来自 <a href="/member/#{topic.reply}">#{topic.reply}</a>
+            <?py else: ?>
+            •  #{date_web(topic.add)}
+            <?py #endif ?>
+            </span>
+        </div>
+        <?py if topic.cnum: ?>
+        <div class="item-count"><a href="/goto/#{topic.key().name()}#reply#{topic.cnum}">#{topic.cnum}</a></div>
+        <?py #endif ?>
+        <div class="c"></div>
+    </div>
+<?py #endfor ?>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+<?py for id in ids: ?>
+Sitemap: #{{BASE_URL}}/sitemap-#{id}
+<?py #endfor ?>

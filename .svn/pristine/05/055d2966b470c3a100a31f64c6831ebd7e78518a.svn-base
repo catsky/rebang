@@ -1,0 +1,22 @@
+<?py if mi_obj: ?>
+<?py     if mi_obj.topicn: ?>
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title} (No.#{m_obj.id}  •  加入于#{date_item(m_obj.add)}  •  #{mi_obj.topicn}主贴) 最近发表的文章</div>
+<div class="main-box">
+<?py include("topic-items.html", topic_objs=mi_obj.topic_objs) ?>
+</div>
+<?py     #endif ?>
+
+<?py     if mi_obj.replyn: ?>
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title} (No.#{m_obj.id}  •  加入于#{date_item(m_obj.add)}  •  #{mi_obj.replyn}回帖) 最近回复的文章</div>
+<div class="main-box">
+<?py include("topic-items.html", topic_objs=mi_obj.reply_objs) ?>
+</div>
+<?py     #endif ?>
+
+<?py else: ?>
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title} (No.#{m_obj.id}  •  加入于#{date_item(m_obj.add)})</div>
+<div class="main-box">
+<div class="no-topic-reply">该会员目前尚无主贴和回贴</div>
+</div>
+
+<?py #endif ?>

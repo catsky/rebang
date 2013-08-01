@@ -1,0 +1,4 @@
+queue:
+
+- name: default
+  rate: 10/s

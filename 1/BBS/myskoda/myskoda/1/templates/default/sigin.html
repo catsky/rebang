@@ -1,0 +1,13 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title}</div>
+<div class="main-box">
+<p class="red">
+<?py for each in errors: ?>
+› #{each} <br/>
+<?py #endfor ?>
+</p>
+<form action="/sigin" method="post">
+<p><label>登录名： <input type="text" name="name" value="${name}" /> 只允许字母或数字</label></p>
+<p><label>密　码： <input type="password" name="pw" value="" /></label></p>
+<p><input type="submit" value=" 注 册 " name="submit" class="textbtn" style="margin-left:60px;" /></p>
+</form>
+</div>

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block main %}
+<!-- block content -->
+
+   <div class="blog-index">
+
+{% for topic in posts %}
+<article>
+   <header>
+       <h1 class="entry-title"><a href="/detailpost/{{topic._id}}" rel="bookmark" title="Permanent Link to {{topic._title}}">{{topic._title}}</a></h1>
+       <p class="meta">
+        <small>in <a href="/" rel="category tag">c-house</a> <a href="/detailpost/{{topic._id}}" title="Comment on {{topic._title}}" class="count">{{topic._comment_num}}</a></small>
+       </p>
+   </header>
+   <div class="entry-content">{{topic._shorten_content}}......
+
+ </div>
+	   <small style="color:#999">Catgory: {{topic._category}}</small>
+       <small style="color:#999">Tags: <a href="{{BASE_URL}}tag/主库/" rel="tag">{{topic._tags}}</a></small>
+   <footer>
+     <a rel="full-article" href="/detailpost/{{topic._id}}">Read On</a>
+   </footer>
+</article>
+{% endfor %}
+   <nav role="pagination">
+       <div>
+{% if _newer %}
+{%if c %}
+	<a class="prev" href="?_start={{ _newstart }}&cat={{c}}">&larr; Newer</a>
+{% elif t %}
+	<a class="prev" href="?_start={{ _newstart }}&tags={{t}}">&larr; Newer</a>
+{% else %}
+    <a class="prev" href="?_start={{ _newstart }}">&larr; Newer</a>
+{% endif %}
+{% endif %}
+         
+         &nbsp;
+{% if _older %}
+{%if c %}
+        <a class="next" href="?_start={{ _oldstart }}&cat={{c}}">Older &rarr;</a>
+{% elif t %}
+        <a class="next" href="?_start={{ _oldstart }}&tags={{t}}">Older &rarr;</a>
+{% else %}
+        <a class="next" href="?_start={{ _oldstart }}">Older &rarr;</a>
+{% endif %}     
+{% endif %}   
+        
+       </div>
+   </nav>
+</div>
+{% endblock %}

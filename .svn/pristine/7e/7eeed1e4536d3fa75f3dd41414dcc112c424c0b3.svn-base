@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /_ah/
+Disallow: /admin/*
+
+<?py for id in ids: ?>
+Sitemap: #{{BASE_URL}}/sitemap-#{id}
+<?py #endfor ?>

@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//1/chartnet.py=utf-8
+encoding//1/chartnet/__init__.py=utf-8
+encoding//1/chartnet/flask_sqlalchemy.py=utf-8
+encoding//1/chartnet/setting.py=utf-8
+encoding//1/chartnet/view/__init__.py=utf-8
+encoding//1/chartnet/view/common.py=utf-8
+encoding//1/chartnet/view/models.py=utf-8
+encoding//1/chartnet/view/views.py=utf-8

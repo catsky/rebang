@@ -1,0 +1,18 @@
+import sae
+from config import MYSQL_DB, MYSQL_USER, MYSQL_PASS, MYSQL_HOST_M, MYSQL_HOST_S, MYSQL_PORT
+from model import database as db
+
+db.init(db_type = 'mysql', \
+        db_schema = MYSQL_DB, \
+        db_host = MYSQL_HOST_M, \
+        db_port = int(MYSQL_PORT), \
+        db_user = MYSQL_USER, \
+        db_password = MYSQL_PASS, \
+        use_unicode = True, \
+        charset = 'utf8')
+
+def create_app():
+    from app import app
+    return app
+           
+application = sae.create_wsgi_app(create_app())

@@ -1,0 +1,331 @@
+#!/bin/env python
+# -*- coding: utf-8 -*- 
+#########weibo
+__author__ = 'Ken Zheng'
+
+import base64, logging
+
+import hashlib, time, json
+import xml.etree.ElementTree as ET
+from flask import Flask, request, render_template,redirect, make_response, url_for, Response, session, jsonify
+from datetime import datetime
+
+from model.database import User
+
+from model.database import db as mydb
+from model.database import dbSession
+from model.database import myDict
+from model.database import YodaoNews
+from api.weibo import APIError, APIClient
+from config import APP_SECRET_KEY
+from weibo.format import _format_user, _format_weibo
+from weixin import weixin
+from news import yodaonews
+
+from sqlalchemy.sql.expression import desc
+
+
+weibo_msg_list = []
+app = Flask(__name__)
+app.debug = True
+app.secret_key = APP_SECRET_KEY
+dbsession = dbSession
+
+def _check_cookie():
+    try:
+        if 'uid' in session:
+            uid = session['uid']
+            dbsession.close() 
+            u = dbsession.query(User).filter(User.id==uid).first()
+            dbsession.close() 
+            return u
+        else:
+            return
+    except BaseException:
+        pass
+        
+def _create_client():
+    return APIClient(_APP_ID_WEIBO, _APP_SECRET_WEIBO, 'http://australian.sinaapp.com/callback')
+
+
+_APP_ID_WEIBO = ''
+_APP_SECRET_WEIBO = ''
+_ADMIN_PASS = 'admin'
+
+
+def persistNews():
+    news = yodaonews.readNews()
+    dbsession.close()
+    for e in news:
+        title = e['title']
+        #logging.error("title: %s"%title)
+        link = e['link']
+        description = e['description']
+        source = e['source']
+        pubdate = e['pubdate']
+        hasImg = e['hasImg']
+        instance = dbsession.query(YodaoNews) \
+                    .filter(YodaoNews.title == title).first()
+        if not instance:
+            news_item = YodaoNews(title, link, description, source,
+                                  pubdate, hasImg)
+            dbsession.add(news_item)
+    dbsession.flush()
+    dbsession.commit()
+    dbsession.close()
+    
+def getNews():
+    dbsession.close()
+    instances = dbsession.query(YodaoNews).order_by(desc(YodaoNews.id))
+    return instances
+
+@app.route('/', methods=['get'])
+def index():
+    persistNews()
+    news = getNews()
+    return render_template('index.html', news=news)
+
+
+@app.route('/sina_verified_check.txt', methods=['get'])
+def sina_verified():
+    return render_template('sina_verified_check.txt')
+    
+
+# @app.route('/news', methods=['get'])
+# def news():
+#     persistNews()
+#     news = getNews()
+#     return render_template('news.html', news=news)
+
+@app.route('/news_load', methods=['post'])
+def news_load():
+    try:
+        news = getNews()
+        return Response(json.dumps(news.all(), False, False), mimetype='application/json')
+    except APIError, e:
+        return jsonify(error='failed')
+
+@app.route('/start', methods=['get'])
+def start():
+    return render_template('start.html')
+
+
+@app.route('/signin', methods=['GET'])
+def signin():
+    logging.debug('ken in signin')
+    client = _create_client()
+    return redirect(client.get_authorize_url())
+  
+@app.route('/callback', methods=['GET'])
+def callback():
+    logging.info('ken in callback')
+    i = request.args.get('code')
+    code = i
+    client = _create_client()
+    r = client.request_access_token(code)
+    logging.error('access token: %s' % json.dumps(r))
+    access_token, expires_in, uid = r.access_token, r.expires_in, r.uid
+    client.set_access_token(access_token, expires_in)
+    u = client.users.show.get(uid=uid)
+    logging.error('got user: %s' % uid)
+#     users = db.select('select * from users where id=?', uid)
+    dbsession.close()
+    users = dbsession.query(User).filter(User.id == uid).first()
+
+    user = User(id=uid, name=u.screen_name, \
+            image_url=u.avatar_large or u.profile_image_url, \
+            statuses_count=u.statuses_count, \
+            friends_count=u.friends_count, \
+            followers_count=u.followers_count, \
+            verified=u.verified, \
+            verified_type=u.verified_type, \
+            auth_token=access_token, \
+            expired_time=expires_in)
+    if users:
+        users.id = uid
+        users.name = u.screen_name
+        users.image_url = u.avatar_large or u.profile_image_url
+        users.statuses_count = u.statuses_count
+        users.friends_count = u.friends_count
+        users.followers_count = u.followers_count
+        users.verified = u.verified
+        users.verified_type = u.verified_type
+        users.auth_token = access_token
+        users.expired_time = expires_in
+        dbsession.commit()
+        dbsession.close()
+    else:
+        dbsession.add(user)
+        dbsession.commit()
+        dbsession.close()
+#         dbsession.close()
+        #db.insert('users', **user)
+    session['uid'] = uid
+    session['access_token'] = access_token
+    session['expires_in'] = expires_in
+    return redirect(url_for('index'))
+    
+@app.route('/update', methods=['POST'])
+def update():
+    u = _check_cookie()
+    if u is None:
+        return jsonify(error='failed', redirect='/signin')
+    client = _create_client()
+    client.set_access_token(u.auth_token, u.expired_time)
+    try:
+        r = client.statuses.update.post(status=request.form.get('status'))
+        if 'error' in r:
+            return Response(json.dumps(r), mimetype='application/json')
+        return jsonify(result='success')
+    except APIError, e:
+        return jsonify(error='failed')
+
+@app.route('/hint', methods=['POST'])
+def hint():
+    u = _check_cookie()
+    if u is None:
+        return jsonify(error='failed', redirect='/signin')
+    client = _create_client()
+    client.set_access_token(u.auth_token, u.expired_time)
+    try:
+        return Response(json.dumps(client.remind.unread_count.get()), mimetype='application/json')
+    except APIError, e:
+        return jsonify(error='failed')
+        
+@app.route('/load', methods=['POST'])
+def load():
+    global weibo_msg_list
+    u = _check_cookie()
+    if u is None:
+        return jsonify(error='failed', redirect='/signin')
+    client = _create_client()
+    client.set_access_token(u.auth_token, u.expired_time)
+    try:
+        r = client.statuses.home_timeline.get()
+        #s.text.find(u"澳洲") != -1
+        
+        #test
+        #filtered_weibo_list = [_format_weibo(s) for s in r.statuses if _format_user(s.user)['screen_name'].find(u"澳洲") != -1]
+        filtered_weibo_list = [_format_weibo(s) for s in r.statuses]
+        weibo_msg_list.extend(filtered_weibo_list)
+        return Response(json.dumps(filtered_weibo_list), mimetype='application/json')
+    except APIError, e:
+        return jsonify(error='failed')
+        
+@app.route('/friends',methods=['POST'])
+def friends():
+    u = _check_cookie()
+    if u is None:
+        return jsonify(error='failed', redirect='/signin')
+    client = _create_client()
+    client.set_access_token(u.auth_token, u.expired_time)
+    try:
+        r = client.friendships.friends.get(uid=u.id, count=99)
+        #logging.info("ken get user:%s"%json.dumps(r))      
+        return Response(json.dumps([_format_user(u) for u in r.users]), mimetype='application/json')
+    except APIError, e:
+        return jsonify(error='failed')
+
+
+
+@app.route('/admin', methods=['GET'])
+def show_admin():
+    return '''<html>
+<body>
+<form action="/admin" method="post">
+<p>Input password:</p>
+<p><input type="password" name="passwd" /></p>
+</form>
+</body>
+</html>
+'''
+@app.route('/signout', methods=['GET'])
+def signout():
+    #resp = make_response(redirect(url_for('index')))
+    #resp.set_cookie(_COOKIE, 'deleted', max_age=0)
+    session.pop('uid', None)
+    return redirect(url_for('index'))
+    
+@app.route('/admin', methods=['POST'])
+def do_admin():
+    global _APP_ID_WEIBO, _APP_SECRET_WEIBO, _ADMIN_PASS
+    passwd = request.form['passwd']
+    if passwd != _ADMIN_PASS:
+        return redirect(url_for('index'))
+    admin_pass = request.form.get('new_passwd')
+    app_id = request.form.get('app_id')
+    app_secret = request.form.get('app_secret')
+    msg = ''
+    if admin_pass and app_id and app_secret:
+        mydb.execute('delete from settings')
+        mydb.execute("insert into settings (id, value) values ('app_id', %s)"%app_id)
+        mydb.execute("insert into settings (id, value) values ('app_secret', %s)"%app_secret)
+        mydb.execute("insert into settings (id, value) values ('admin_pass',%s)"%admin_pass)
+        msg = 'Updated!'
+        _APP_ID_WEIBO = app_id
+        _APP_SECRET_WEIBO = app_secret
+        _ADMIN_PASS = admin_pass
+    return '''<html>
+<body>
+<p>%s</p>
+<form action="/admin" method="post">
+<p>App ID:</p>
+<p><input type="text" name="app_id" value="%s" /></p>
+<p>App Secret:</p>
+<p><input type="text" name="app_secret" value="%s" /></p>
+<p>Old Password:</p>
+<p><input type="text" name="passwd" readonly="readonly" value="%s" /></p>
+<p>New Password:</p>
+<p><input type="text" name="new_passwd" value="%s" /></p>
+<p>WARNING: click submit will update app_id, app_secret and admin password!</p>
+<p><input type="submit" name="submit" value="Submit" /></p>
+</form>
+</body>
+</html>'''% (msg, _APP_ID_WEIBO, _APP_SECRET_WEIBO, _ADMIN_PASS, _ADMIN_PASS)
+
+def _load_app_info():
+    global _APP_ID_WEIBO, _APP_SECRET_WEIBO, _ADMIN_PASS
+    settings = mydb.execute('select * from settings').fetchall()
+    for s in settings:
+        if s['id'] == 'app_id':
+            _APP_ID_WEIBO = s['value']
+        if s['id'] == 'app_secret':
+            _APP_SECRET_WEIBO = s['value']
+        if s['id'] == 'admin_pass':
+            _ADMIN_PASS = s['value']
+    
+
+_load_app_info()
+###################
+    
+
+#公众号消息服务器网址接入验证
+#需要在公众帐号管理台手动提交, 验证后方可接收微信服务器的消息推送
+@app.route('/weixin', methods=['GET'])
+def weixin_access_verify():
+    echostr = request.args.get('echostr')
+    if weixin.verification(request) and echostr is not None:
+        return echostr
+    return 'access verification fail'
+
+#来自微信服务器的消息推送
+@app.route('/weixin', methods=['POST'])
+def weixin_msg():
+    if weixin.verification(request):
+        data = request.data
+        msg = weixin.parse_msg(data)
+        if weixin.user_subscribe_event(msg):
+            return weixin.help_info(msg)
+        elif weixin.is_text_msg(msg):
+            content = msg['Content']
+            if content == u'?' or content == u'？':
+                return weixin.help_info(msg)
+            else:
+                weibos = weixin.search_weibo()
+                rmsg = weixin.response_news_msg(msg, weibos)
+                logging.info(rmsg)
+                return rmsg
+    return 'message processing fail'
+
+if __name__ == '__main__':
+    app.run()

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>澳洲一刻 热新闻| 关注澳洲生活、关注澳洲移民信息</title>
+    <meta name="keywords" content="澳洲一刻, 微信, 微博, 澳洲生活, 澳洲移民, 技术移民, 投资移民, 澳大利亚, 房产, 资讯平台" />
+    <meta name="description" content="澳洲一刻是一个关注澳洲生活以及移民信息的资讯平台" />
+    <!--[if lt IE 9]>
+        <script src="/static/js/html5.js"></script>
+    <![endif]-->
+    <link href="http://cdnjs.bootcss.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/custom.css" />
+    <script type="text/javascript" src="http://cdnjs.bootcss.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.postjson.js"></script>
+    <script type="text/javascript" src="http://cdnjs.bootcss.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    append_news();
+});
+
+function append_news() {
+    var L = [];
+    
+    {% for item in news %}
+        L.push('<div class="weibo">');
+        L.push('<div class="weibo-user">{{ item['id'] }}.<a href={{ item['link'] }} target=blank>{{ item['title'] |safe}}');
+        if( "{{ item['hasImg'] }}" == "True")
+        {
+            L.push('<i class="picture"></i>');
+        }
+        L.push('</a></div>');
+        L.push('</div>');
+    {% endfor %}
+    
+    $('#news_list').prepend(L.join('\n'));
+}
+
+function hasImg(input){
+      
+    if(input.indexOf("<img ") >= 0 )  
+    {  
+        return true; 
+    }  
+    return false;
+}
+
+</script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container" style="width:940px">
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news">澳洲热新闻</a></li>
+                        <li><a href="/start">澳洲网站导航</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- /navbar -->
+
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <div style="height:60px"></div>
+            </div>
+        </div>
+
+        <div class="row" style="background-color:#fff">
+            <div class="span3">
+                <div class="" style="height: 30px"></div>
+            </div>
+        </div>
+        <div class="row" style="background-color:#fff">
+            <div class="span3">
+                <div class="mylogo">
+                     <div><img src="/static/img/澳洲一刻头网站LOGO.png"></div>         
+                </div>
+                <div class="" style="height: 20px"></div>
+            </div>
+            <div class="span6">
+                <div style="padding-left:30px">
+                    <div class="" style="height: 20px"></div>
+                    <div class="shadow">澳洲热新闻排行</div>        
+                </div>
+            </div>
+        </div>
+        <div class="row topborder" style="background-color:#fff">
+            <div class="span3">
+                <div class="rightborder recommend" style="padding-top:20px">
+                    <div class="h4">请关注<a href="http://weibo.com/3haitao" target="_blank">@澳洲一刻</a></div>
+                    <div id="friend-list" class="list">
+                        
+                        <div><iframe width="136" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=2612034061&style=2&btn=red&dpc=1"></iframe></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                        <div><p>微信公众账号: 澳洲一刻 </p>微信号：azyk520 </div>
+                        <div><img src="/static/img/qrcode_for_gh_2719f7ac91cf_344.jpg"></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- picture slide -->
+            <div id="myCarousel" class="carousel slide span9">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="/static/img/1.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h4>即使杀光所有报晓的公鸡，天，还是会亮的</h4>
+                        <p>
+		    @shifeike: 昨天是李尚平被枪杀10周年，我发的那条纪念微博，成为我的新浪微博账号最后一条微博。这个2010年1月为反对红中抢笔而注册的微博，两年多时间里发了14538条微博，加上被删除的差不多近200万字，积累了96269条粉丝，自此灰飞烟灭。
+                        </p>
+                    </div>
+                </div>
+                <div class="item next right">
+                    <img src="/static/img/2.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h4>如果人民不欢迎我们，就该我们下台了</h4>
+                        <p>
+		    【胡耀邦语录】①历史是混不过去的。②民主、自由、平等、博爱等观念是人类精神的一大解放。③如果人民不欢迎我们，就该我们下台了。④不懂的不要装懂，不通的不要装通，不服的不要装服。⑤中国的出路是民主和科学。⑥一个精神上、组织上被禁锢被压制的不自由民族怎么可能与其他国家进行自由竞争呢？
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="/static/img/3.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h4>国家像需要空气一样需要变革</h4>
+                        <p>
+		    据戈尔巴乔夫基金会新闻处通报，俄总统梅德韦杰夫今天向前苏联总统戈尔巴乔夫颁发圣徒安德烈·佩尔沃兹万内勋章。戈尔巴乔夫在受勋时表示感谢，并称很激动。他坦言，对自己做过的事情问心无愧。他强调，他进行改革不是为了赢得敬重和荣誉，而是因为认识到，“国家像需要空气一样需要变革”。他承认犯过错误，并至今还在为这些错误而烦恼。但他认为：“短短几年所走过的路，使专制的过去永远成为了历史。”
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+            </div>    
+            <!-- picture slide end -->
+            <div class="span3" style="height:324px"></div>
+            <!-- news load test start-->
+            <div class="span9" style="padding-top:20px">
+            <div class="row">
+                    <div id="weibo-list" class="span9">
+                    </div>
+                </div>
+            </div>
+            <!-- news load test end-->
+            
+            <div class="span9" style="padding-top:20px">
+                <div class="row">
+                    <div class="span9" id="news_list">
+                 <!--    {% for item in news %} 
+                        <div class="weibo">
+                            <div class="weibo-user">{{ item['id'] }}.<a href={{ item['link'] }} target=blank>{{ item['title'] |safe}}<i class="picture"></i></a></div>
+                            <div class="weibo-text">{{ item['description']|safe }}</div>
+                            <div class="weibo-time">--发布时间：{{ item['pubdate'] }}</div> 
+                        </div>
+                     {% endfor %} -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row" style="background-color:#fff">
+            <div class="span12">
+                <div class="topborder"></div>
+            </div>
+        </div>
+
+        <div id="footer" class="row" style="background-color:#fff">
+            <div class="span3">
+            <p><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F48a0a6443fd05180ee3a751a96671c3f' type='text/javascript'%3E%3C/script%3E"));
+</script></p>
+            </div>
+            <div class="span3">
+            </div>
+            <div class="span3">
+            </div>
+            <div class="span3">
+                <p>Python Web App</p>
+                <p><a href="http://sae.sina.com.cn" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/117X12px.gif" title="Powered by Sina App Engine"></a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span12" style="height:20px"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F48a0a6443fd05180ee3a751a96671c3f' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

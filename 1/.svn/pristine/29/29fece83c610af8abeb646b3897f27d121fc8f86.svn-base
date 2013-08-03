@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>澳洲一刻 热新闻| 关注澳洲生活、关注澳洲移民信息</title>
+    <meta name="keywords" content="澳洲一刻, 微信, 微博, 澳洲生活, 澳洲移民, 技术移民, 投资移民, 澳大利亚, 房产, 资讯平台" />
+    <meta name="description" content="澳洲一刻是一个关注澳洲生活以及移民信息的资讯平台" />
+    <!--[if lt IE 9]>
+        <script src="/static/js/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/custom.css" />
+    <script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.postjson.js"></script>
+<script type="text/javascript">
+
+function hasImg(input){
+      
+    if(input.indexOf("<img ") >= 0 )  
+    {  
+        return true; 
+    }  
+}
+
+
+</script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container" style="width:940px">
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news">澳洲热新闻</a></li>
+                        <li><a href="/start">澳洲网站导航</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- /navbar -->
+
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <div style="height:60px"></div>
+            </div>
+        </div>
+
+        <div class="row" style="background-color:#fff">
+            <div class="span3">
+                <div class="" style="height: 30px"></div>
+            </div>
+        </div>
+        <div class="row" style="background-color:#fff">
+            <div class="span3">
+                <div class="mylogo">
+                     <div><img src="/static/img/澳洲一刻头网站LOGO.png"></div>         
+                </div>
+                <div class="" style="height: 20px"></div>
+            </div>
+            <div class="span6">
+                <div style="padding-left:30px">
+                    <div class="" style="height: 20px"></div>
+                    <div class="shadow">澳洲热新闻排行</div>        
+                </div>
+            </div>
+        </div>
+        <div class="row topborder" style="background-color:#fff">
+            <div class="span3">
+                <div class="rightborder recommend" style="padding-top:20px">
+                    <div class="h4">请关注<a href="http://weibo.com/3haitao" target="_blank">@澳洲一刻</a></div>
+                    <div id="friend-list" class="list">
+                        
+                        <div><iframe width="136" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=2612034061&style=2&btn=red&dpc=1"></iframe></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                        <div><p>微信公众账号: 澳洲一刻 </p>微信号：azyk520 </div>
+                        <div><img src="/static/img/qrcode_for_gh_2719f7ac91cf_344.jpg"></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- picture slide -->
+            <div class="carousel slide span9" id="carousel-304759">
+                <ol class="carousel-indicators">
+                    <li class="active" data-slide-to="0" data-target="#carousel-304759">&nbsp;</li>
+                    <li data-slide-to="1" data-target="#carousel-304759">&nbsp;</li>
+                    <li data-slide-to="2" data-target="#carousel-304759">&nbsp;</li> 
+                </ol>
+
+                <div class="carousel-inner">
+                <div class="item active"><img alt="" src="/static/img/1.jpg" />
+                <div class="carousel-caption" contenteditable="true">
+                <h4>棒球</h4>
+
+                <p>棒球运动是一种以棒打球为主要特点，集体性、对抗性很强的球类运动项目，在美国、日本尤为盛行。</p>
+                </div>
+                </div>
+
+                <div class="item"><img alt="" src="/static/img/2.jpg" />
+                <div class="carousel-caption" contenteditable="true">
+                <h4>冲浪</h4>
+
+                <p>冲浪是以海浪为动力，利用自身的高超技巧和平衡能力，搏击海浪的一项运动。运动员站立在冲浪板上，或利用腹板、跪板、充气的橡皮垫、划艇、皮艇等驾驭海浪的一项水上运动。</p>
+                </div>
+                </div>
+
+                <div class="item"><img alt="" src="/static/img/3.jpg" />
+                <div class="carousel-caption" contenteditable="true">
+                <h4>自行车</h4>
+
+                <p>以自行车为工具比赛骑行速度的体育运动。1896年第一届奥林匹克运动会上被列为正式比赛项目。环法赛为最著名的世界自行车锦标赛。</p>
+                </div>
+                </div>
+                </div>
+                <a class="left carousel-control" data-slide="prev" href="#carousel-304759">&lsaquo;</a> <a class="right carousel-control" data-slide="next" href="#carousel-304759">&rsaquo;</a>
+             </div>
+
+            <!-- news load test-->
+            <div class="span9" style="padding-top:20px">
+            <div class="row">
+                    <div id="weibo-list" class="span9">
+                    </div>
+                </div>
+            </div>
+            <!-- news load test-->
+            
+            <div class="span9" style="padding-top:20px">
+                <div class="row">
+                    <div class="span9" id="news_loadding">
+                     {% for item in news %} 
+                        <div class="weibo">
+                            <div class="weibo-user">{{ item['id'] }}.<a href={{ item['link'] }} target=blank>{{ item['title'] |safe}}<i class="picture"></i></a></div>
+            <!--                <div class="weibo-text">{{ item['description']|safe }}</div>
+                            <div class="weibo-time">--发布时间：{{ item['pubdate'] }}</div> -->
+                        </div>
+                     {% endfor %} 
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="row" style="background-color:#fff">
+            <div class="span12">
+                <div class="topborder"></div>
+            </div>
+        </div>
+
+        <div id="footer" class="row" style="background-color:#fff">
+            <div class="span3">
+            <p><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F48a0a6443fd05180ee3a751a96671c3f' type='text/javascript'%3E%3C/script%3E"));
+</script></p>
+            </div>
+            <div class="span3">
+            </div>
+            <div class="span3">
+            </div>
+            <div class="span3">
+                <p>Python Web App</p>
+                <p><a href="http://sae.sina.com.cn" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/117X12px.gif" title="Powered by Sina App Engine"></a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span12" style="height:20px"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F48a0a6443fd05180ee3a751a96671c3f' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

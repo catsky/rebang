@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <title>澳洲一刻 | 关注澳洲生活、关注澳洲移民信息</title>
+    <meta name="keywords" content="澳洲一刻, 微信, 微博, 澳洲生活, 澳洲移民, 技术移民, 投资移民, 澳大利亚, 房产, 资讯平台" />
+    <meta name="description" content="澳洲一刻是一个关注澳洲生活以及移民信息的资讯平台" />
+    <meta property="wb:webmaster" content="efd5a85e1eaf1db0" />
+    <!--[if lt IE 9]>
+        <script src="/static/js/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/custom.css" />
+
+    <script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.postjson.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container" style="width:940px">
+                <div class="nav-collapse">
+                    <ul class="nav">
+                       <li><a href="/">首页</a></li>
+                       <li><a href="/news">澳洲热新闻</a></li>
+                       <li><a href="/start">澳洲网站导航</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- /navbar -->
+
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <div style="height:60px"></div>
+            </div>
+        </div>
+
+        <div class="row" style="background-color:#fff">
+            <div class="span3">
+                <div class="rightborder" style="height: 20px"></div>
+            </div>
+        </div>
+
+        <div class="row" style="background-color:#fff">
+            <div class="span3">
+                <div class="rightborder recommend" style="padding-top:20px">
+                    <div class="h4">请关注<a href="http://weibo.com/3haitao" target="_blank">@澳洲一刻</a></div>
+                    <div id="friend-list" class="list">
+                        
+                        <div><iframe width="136" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=2612034061&style=2&btn=red&dpc=1"></iframe></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                        <div><p>微信公众账号: 澳洲一刻 </p>微信号：azyk520 </div>
+                        <div><img src="/static/img/qrcode_for_gh_2719f7ac91cf_344.jpg"></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="span9" style="padding-top:20px">
+                <div class="row">
+                    <div class="span9">
+                        <div style="padding-left:30px">
+                            <div>请使用新浪微博帐号登录：</div>
+                             <!-- <div class="h4">[内测中，需要邀请才能登陆] 先去参观<a href="/news">澳洲热新闻</a>吧</div> -->
+                            <div style="padding:10px 0px"><a href="/signin"><img src="/static/i/signin.png" style="width: 239px;height: 48px" /></a></div>
+                        </div>
+                    </div>
+                    <div class="span9">
+                        <div style="padding-left:30px">
+                            <div class="" style="height: 20px"></div>
+                            <div class="shadow">澳洲一刻，带来最新的澳洲生活资讯以及移民信息。</div>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="row" style="background-color:#fff">
+            <div class="span12">
+                <div class="topborder"></div>
+            </div>
+        </div>
+
+        <div id="footer" class="row" style="background-color:#fff">
+            <div class="span3">
+            <p>沪ICP备12039047号-1<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F48a0a6443fd05180ee3a751a96671c3f' type='text/javascript'%3E%3C/script%3E"));
+</script></p>
+            </div>
+            <div class="span3">
+            </div>
+            <div class="span3">
+            </div>
+            <div class="span3">
+                <p>Python Web App</p>
+                <p><a href="http://sae.sina.com.cn" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/117X12px.gif" title="Powered by Sina App Engine"></a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span12" style="height:20px"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F48a0a6443fd05180ee3a751a96671c3f' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

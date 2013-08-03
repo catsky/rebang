@@ -1,0 +1,47 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.8.1
+-- http://www.phpmyadmin.net
+--
+-- 主机: w.rdc.sae.sina.com.cn:3307
+-- 生成日期: 2013 年 06 月 11 日 13:13
+-- 服务器版本: 5.5.23
+-- PHP 版本: 5.3.3
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- 数据库: `app_australian`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` varchar(200) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `image_url` varchar(1000) NOT NULL,
+  `statuses_count` bigint(20) NOT NULL,
+  `friends_count` bigint(20) NOT NULL,
+  `followers_count` bigint(20) NOT NULL,
+  `verified` tinyint(1) NOT NULL,
+  `verified_type` int(11) NOT NULL,
+  `auth_token` varchar(2000) NOT NULL,
+  `expired_time` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `image_url`, `statuses_count`, `friends_count`, `followers_count`, `verified`, `verified_type`, `auth_token`, `expired_time`) VALUES
+('2612034061', '澳洲一刻', 'http://tp2.sinaimg.cn/2612034061/180/40025231130/1', 392, 465, 1722, 0, -1, '2.00d4plqCNVZz1Dcd71488252sPkezC', 1528557388);

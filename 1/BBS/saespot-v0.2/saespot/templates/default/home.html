@@ -1,0 +1,17 @@
+<div class="title">
+    <div class="float-left">
+        <a href="/">#{{SITE_TITLE}}</a> &raquo; #{title}
+    </div>
+    <?py if cur_user and cur_user.flag>1 and newest_node: ?>
+    <div class="float-right"><a href="/newpost/1" rel="nofollow">+发新帖</a></div>
+    <?py #endif ?>
+    <div class="c"></div>
+</div>
+
+<div class="main-box">
+
+<?py include("topic-items.html") ?>
+
+</div>
+
+

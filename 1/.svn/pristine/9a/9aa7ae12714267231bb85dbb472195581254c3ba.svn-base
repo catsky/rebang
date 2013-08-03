@@ -1,0 +1,9 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title} （ 有人在下面的文章回复或提起了你 ）</div>
+<div class="main-box">
+<?py if topic_objs: ?>
+<?py include("topic-items-notifications.html") ?>
+<?py else: ?>
+<p>没有未读提醒</p>
+<?py #endif ?>
+</div>
+

@@ -1,0 +1,160 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import logging
+# from sqlalchemy import MetaData, Table, Column, ForeignKey, Boolean, \
+#      Integer, String, DateTime
+# from sqlalchemy.orm import dynamic_loader, scoped_session, create_session, \
+#      mapper
+from sqlalchemy.pool import NullPool
+from flaskext.sqlalchemy import SQLAlchemy
+from config import MYSQL_DB, MYSQL_USER, MYSQL_PASS, MYSQL_HOST_M, MYSQL_HOST_S, MYSQL_PORT 
+
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, Float, DateTime
+from sqlalchemy.orm import sessionmaker
+
+Base = declarative_base()
+
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(String(200), primary_key=True)
+    name = Column(String(200))
+    image_url = Column(String(200))
+    statuses_count = Column(Integer)
+    friends_count = Column(Integer)
+    followers_count = Column(Integer)
+    verified = Column(Integer)
+    verified_type = Column(Integer)
+    auth_token = Column(String(200))
+    expired_time = Column(Float)
+
+    def __init__(self, id, name, image_url, statuses_count, friends_count, followers_count, verified, \
+                   verified_type, auth_token, expired_time ):
+        self.id = id
+        self.name = name
+        self.image_url = image_url
+        self.statuses_count = statuses_count
+        self.friends_count = friends_count
+        self.followers_count = followers_count
+        self.verified = verified
+        self.verified_type = verified_type
+        self.auth_token = auth_token
+        self.expired_time = expired_time
+
+    def __repr__(self):
+        return "<User('%s','%s', '%s')>" % (self.id,
+                self.name,
+                self.image_url,
+                self.statuses_count,
+                self.friends_count,
+                self.followers_count,
+                self.verified,
+                self.verified_type,
+                self.auth_token,
+                self.expired_time)
+        
+        
+class YodaoNews(Base):
+    __tablename__ = 'news'
+    id = Column(Integer, primary_key=True)
+    title = Column(String(200))
+    link = Column(String(200))
+    description = Column(String(2000))
+    source = Column(String(200))
+    pubdate = Column(String(200))
+    hasImg = Column(String(200))
+  
+
+    def __init__(self, title, link, description, source, pubdate, hasImg):
+        self.title = title
+        self.link = link
+        self.description = description
+        self.source = source
+        self.pubdate = pubdate
+        self.hasImg = hasImg
+
+    def __repr__(self):
+        return "<YodaoNews('%s','%s', '%s', '%s', '%s')>" % (self.title,
+        self.link,
+        self.description,
+        self.source,
+        self.pubdate,
+        self.hasImg)
+        
+        
+class nullpool_SQLAlchemy(SQLAlchemy): 
+    def apply_driver_hacks(self, app, info, options): 
+            super(nullpool_SQLAlchemy, self).apply_driver_hacks(app, info, options) 
+            from sqlalchemy.pool import NullPool 
+            options['poolclass'] = NullPool 
+            del options['pool_size']
+  
+
+def init(db_type, db_schema, db_host, db_port=0, db_user=None, db_password=None, db_driver=None, **db_args):
+    mydb = nullpool_SQLAlchemy()
+    engine = mydb.create_engine(
+          'mysql+mysqldb://%s:%s@%s:%s/%s?charset=utf8&use_unicode=1'%
+                          (db_user,db_password,db_host,db_port,db_schema),
+          poolclass=NullPool,
+          pool_recycle=5, echo=False)
+    Base.metadata.create_all(engine) 
+    return engine
+
+
+
+db =  init(db_type = 'mysql', \
+        db_schema = MYSQL_DB, \
+        db_host = MYSQL_HOST_M, \
+        db_port = int(MYSQL_PORT), \
+        db_user = MYSQL_USER, \
+        db_password = MYSQL_PASS, \
+        use_unicode = True, \
+        charset = 'utf8')
+
+_Session = sessionmaker(bind=db)
+dbSession = _Session()
+
+
+class myDict(dict):
+    '''
+    Simple dict but support access as x.y style.
+
+    >>> d1 = _Dict()
+    >>> d1['x'] = 100
+    >>> d1.x
+    100
+    >>> d1.y = 200
+    >>> d1['y']
+    200
+    >>> d2 = _Dict(a=1, b=2, c='3')
+    >>> d2.c
+    '3'
+    >>> d2['empty']
+    Traceback (most recent call last):
+        ...
+    KeyError: 'empty'
+    >>> d2.empty
+    Traceback (most recent call last):
+        ...
+    KeyError: 'empty'
+    >>> d3 = _Dict(('a', 'b', 'c'), (1, 2, 3))
+    >>> d3.a
+    1
+    >>> d3.b
+    2
+    >>> d3.c
+    3
+    '''
+    def __init__(self, names=(), values=(), **kw):
+        super(myDict, self).__init__(**kw)
+        logging.info('mydict init start')
+        for k, v in zip(names, values):
+            self[k] = v
+        logging.info('mydict init done')
+
+    def __getattr__(self, key):
+        return self[key]
+
+    def __setattr__(self, key, value):
+        self[key] = value

@@ -1,0 +1,28 @@
+﻿{'reposts_count': 97, 'retweeted_status': {'reposts_count': 8619, 'original_pic': u'http://ww1.sinaimg.cn/large/6628711bjw1e5atqxsovfj20b4170dkr.jpg', 'thumbnail_pic': u'http://ww1.sinaimg.cn/thumbnail/6628711bjw1e5atqxsovfj20b4170dkr.jpg', 'text': u'\\u5f53\\u7ed9\\u8d35\\u5bbe\\u624e\\u4e0a\\u5c0f\\u8fab\\u4e4b\\u540e\\u3002\\u3002\\u3002\\u771f\\u662f\\u592a\\u592a\\u592a\\u53ef\\u7231\\u4e86\\uff01[\\u62b1\\u62b1][\\u7231\\u4f60]\\u300c\\u8f6c\\u300d ', 'created_at': 1370232905.0, 'comments_count': 1295, 'user': {'verified_type': -1, 'verified': False, 'screen_name': u'\\u5fae\\u535a\\u641e\\u7b11\\u6392\\u884c\\u699c', 'profile_url': u'topgirls8', 'id': '1713926427', 'profile_image_url': u'http://tp4.sinaimg.cn/1713926427/50/40000875722/0'}}, 'text': u'\\u592a\\u53ef\\u7231\\u4e86\\uff01[\\u62b1\\u62b1][\\u7231\\u4f60]', 'created_at': 1370272381.0, 'comments_count': 27, 'user': {'verified_type': -1, 'verified': False, 'screen_name': u'\\u5fae\\u535a\\u641e\\u7b11\\u6392\\u884c\\u699c', 'profile_url': u'topgirls8', 'id': '1713926427', 'profile_image_url': u'http://tp4.sinaimg.cn/1713926427/50/40000875722/0'}}, 
+
+reposts_count: int
+original_pic: string
+thumbnail_pic: string
+text: string
+created_at: datetime
+comments_count: int
+user.verified_type: int
+user.verified: bool
+user.screen_name: string
+user.profile_url: string
+user.id: string
+user.profile_image_url: string
+retweeted_status.reposts_count:int
+retweeted_status.original_pic:string
+retweeted_status.thumbnail_pic:string
+retweeted_status.text:string
+retweeted_status.created_at:datetime
+retweeted_status.comments_count:int
+retweeted_status.user.verified_type: int
+retweeted_status.user.verified
+retweeted_status.user.screen_name
+retweeted_status.user.profile_url
+retweeted_status.user.id
+retweeted_status.user.profile_image_url
+
+

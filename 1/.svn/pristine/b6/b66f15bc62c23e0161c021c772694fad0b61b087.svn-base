@@ -1,0 +1,75 @@
+{% extends "base_weixin.html" %}
+{% block title %}
+{{obj._title}}
+{% endblock %}
+
+{% block main %}
+
+                    <!--picture and details topic list -->
+                    <div class="row-fluid">
+                        <div class="krContent">
+							 <div>
+								<article class="hentry" role="article">
+										<h4 class="entry-title">{{obj._title}}</h4>
+										<p class="meta">
+											<small>小编 at {{add_time}} in <a href="/category/{{obj._category}}">{{obj._category}}</a> | 
+											<a href="" title="Comment on {{obj._title}}" class="count">{{obj._comment_num}}</a>条评论
+											</small>
+										</p>	
+
+									<div class="entry-content" id="postcondiv">{{obj._content|safe}}</div>
+									<div>
+										&nbsp;
+									</div>
+									<div>
+										<strong>
+											<font color=#666666 face="hiragino sans gb, microsoft yahei, segoe ui, tahoma, arial, helvetica, sans-serif">
+												<span style="font-size: 20px; line-height: 29px">
+													请关注公众微信号：
+													<span style="color: rgb(61, 133, 198)">
+														澳洲一刻
+													</span>
+												</span>
+											</font>
+										</strong>
+										<div class="wx_title clearfix">
+										<div class="ds-thread" data-category="{{obj._category}}" data-thread-key="{{obj._id}}"
+									data-title="{{obj._title}}" data-author-key="" data-url=""></div>
+											<p style="margin-top: 5px; margin-bottom: 5px">
+												<strong>
+													<font size=3>
+														<img class="ico ico_share_friend" src="/static/themes/rebang/images/ico_share_friend.png" style="height: 30px; "/>
+													</font>
+													<font color=#666666 face="hiragino sans gb, microsoft yahei, segoe ui, tahoma, arial, helvetica, sans-serif">
+														<span style="font-size: 20px; line-height: 29px">
+															如果觉得还不错，记得在微信朋友圈分享哦：）
+														</span>
+													</font>
+												</strong>
+											</p>
+										</div>
+										
+									</div>
+								</article>
+								<!-- Duoshuo Comment BEGIN --> 
+									
+								<script type="text/javascript">
+								var duoshuoQuery = {short_name:"australian"};
+									(function() {
+										var ds = document.createElement('script');
+										ds.type = 'text/javascript';ds.async = true;
+										ds.src = 'http://static.duoshuo.com/embed.js';
+										ds.charset = 'UTF-8';
+										(document.getElementsByTagName('head')[0] 
+										|| document.getElementsByTagName('body')[0]).appendChild(ds);
+									})();
+									</script> 
+								<!-- Duoshuo Comment END -->
+							</div>
+                        </div>
+                    </div>
+
+
+{% endblock %}
+
+   

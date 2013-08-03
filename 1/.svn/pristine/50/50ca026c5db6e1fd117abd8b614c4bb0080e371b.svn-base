@@ -1,0 +1,12 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title}</div>
+<div class="main-box">
+<p class="red">
+<?py for each in errors: ?>
+› #{each} <br/>
+<?py #endfor ?>
+</p>
+<form action="/setname" method="post">
+<p><label>对外显示的名字： <input type="text" name="name" value="${name}" /> 只允许字母或数字（以后不能修改）</label></p>
+<p><input type="submit" value=" 提 交 " name="submit" class="textbtn" style="margin-left:60px;" /></p>
+</form>
+</div>

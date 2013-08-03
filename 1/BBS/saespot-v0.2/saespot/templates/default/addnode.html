@@ -1,0 +1,27 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title}</div>
+<div class="main-box">
+
+<form name="form1" action="" method="post">
+<p><label>* <input type="text" name="name" value="${n_obj.name}" /> 分类名</label></p>
+
+<?py if n_obj.name: ?>
+<p><label><input type="text" id="imgurl" name="imgurl" value="${n_obj.imgurl}" style="width:300px;"/> 73x73px </label><br/>
+使用图片相对路径 /static/images/xxx 或 绝对路径 http://www.aaaaa.com/xxx.jpg</p>
+也可以上传一张小图片：
+<?py include("uploads_photo_node.html") ?>
+<br/>
+<?py else: ?>
+<input type="hidden" id="imgurl" name="imgurl" value=""/>
+<?py #endif ?>
+
+<p><label><textarea name="about" style="width: 440px; height: 70px;">${n_obj.about}</textarea> 简短介绍</label></p>
+<p><input type="submit" value=" 提 交 " name="submit" class="textbtn" /></p>
+</form>
+<p></p>
+<form name="form2" action="" method="post">
+修改分类 > 输入分类的id：
+<input type="text" name="id" value="" />
+<input type="submit" value=" 提 交 " name="submit" class="textbtn" />
+</form>
+
+</div>

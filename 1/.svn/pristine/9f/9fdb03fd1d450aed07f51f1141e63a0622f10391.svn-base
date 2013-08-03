@@ -1,0 +1,14 @@
+<?py if cur_user and cur_user['flag']=='1': ?>
+<script type="text/javascript">
+    document.location.href = "/setavatar";
+</script>
+
+<?py #endif ?>
+
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title}</div>
+<div class="main-box">
+
+<a href="#{qq_login_url}" rel="nofollow"><img src="/static/default/img/Connect_logo_4.png" alt="用QQ安全登录#{{SITE_TITLE}}"/></a> 
+
+
+</div>

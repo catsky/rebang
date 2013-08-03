@@ -1,0 +1,9 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title} (No.#{m_obj['id']} #{date_item(int(m_obj['add']))}) 最近发表的文章</div>
+<div class="main-box">
+<?py include("topic-items.html") ?>
+</div>
+
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title} (No.#{m_obj['id']} #{date_item(int(m_obj['add']))}) 最近回复的文章</div>
+<div class="main-box">
+<?py include("topic-items.html", topic_objs=member_comment_topic_objs) ?>
+</div>

@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = 'Ken Zheng'
+
+
+from datetime import datetime, tzinfo, timedelta
+import time
+
+_TD_ZERO = timedelta(0)
+_TD_8 = timedelta(hours=8)
+
+#test
+# weibo_msg_list = []
+
+class UTC8(tzinfo):
+    def utcoffset(self, dt):
+        return _TD_8
+
+    def tzname(self, dt):
+        return "UTC+8:00"
+
+    def dst(self, dt):
+        return _TD_ZERO
+
+_UTC8 = UTC8()
+
+def _format_datetime(dt):
+    t = datetime.strptime(dt, '%a %b %d %H:%M:%S +0800 %Y').replace(tzinfo=_UTC8)
+    return time.mktime(t.timetuple())
+
+def _format_user(u):
+    return dict(id=str(u.id), screen_name=u.screen_name, profile_url=u.profile_url, verified=u.verified, verified_type=u.verified_type, profile_image_url=u.profile_image_url)
+
+def _format_weibo(st):
+    user = st.user
+    r = dict(
+        user = _format_user(st.user),
+        text = st.text,
+        created_at = _format_datetime(st.created_at),
+        reposts_count = st.reposts_count,
+        comments_count = st.comments_count,
+    )
+    if 'original_pic' in st:
+        r['original_pic'] = st.original_pic
+    if 'thumbnail_pic' in st:
+        r['thumbnail_pic'] = st.thumbnail_pic
+    if 'retweeted_status' in st:
+        r['retweeted_status'] = _format_weibo(st.retweeted_status)
+    return r

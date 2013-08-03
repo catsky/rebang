@@ -1,0 +1,18 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title}</div>
+<div class="main-box">
+<p class="red">
+<?py for each in errors: ?>
+› #{each} <br/>
+<?py #endfor ?>
+</p>
+<?py if cur_user.flag >1: ?>
+<p>当前头像：<br/><img src="#{{AVATAR_URL}}#{cur_user.name}.jpg?#{cur_time()}"/></p>
+<?py #endif ?>
+
+<form action="/setavatar" enctype="multipart/form-data" method="post">
+<p>选择头像图片 > <input name="myfile" type="file"> </p>
+<p><input type="submit" value=" 上 传 " name="submit" class="textbtn" /></p>
+</form>
+<p>&nbsp;</p>
+<p>注：当更换新的头像时，由于缓存，你的头像可能暂时保持原来的。</p>
+</div>

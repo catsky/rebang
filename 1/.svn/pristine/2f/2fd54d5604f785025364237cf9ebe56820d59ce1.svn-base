@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="@catsky">
+
+  <title>澳洲一刻</title>
+  <style>
+    body {
+      padding-top: 30px;
+      text-align: center;
+    }
+    body img {
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+<h2>微信公众帐号</h2>
+<h1>澳洲一刻（微信号azyk520）</h1>
+<p>by <a target="_blank" href="http://australian.sinaapp.com">@catsky</a></p>
+<img src="/static/img/qrcode_for_gh_2719f7ac91cf_344.jpg">
+</body>
+</html>

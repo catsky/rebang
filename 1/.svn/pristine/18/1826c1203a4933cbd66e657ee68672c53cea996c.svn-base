@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN" slick-uniqueid="3"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">  
+	<meta charset="UTF-8">
+	<title>澳洲一刻-澳州网站导航</title>
+    <meta name="keywords" content="澳洲一刻, 澳洲中文网站导航，澳洲网站，微信, 微博, 澳洲生活, 澳洲移民, 技术移民, 投资移民, 澳大利亚, 房产, 资讯平台" />
+    <meta name="description" content="澳洲一刻是一个关注澳洲生活以及移民信息的资讯平台. 澳洲中文网站导航" />
+    <link rel="stylesheet" href="/static/themes/rebang/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/themes/rebang/css/custom.css" />
+	 <link rel="stylesheet" href="/static/themes/rebang/css/style.css" />
+<style type="text/css">@media print { #feedlyMiniIcon { display: none; } }</style></head>
+
+<body class="home blog">
+<div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container" style="width:940px">
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li><a href="/">首页</a></li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="container" >
+        <div class="row" style="border-radius:6px;">
+            <div class="span3">
+                <div style="height:60px"></div>
+            </div>
+        </div>
+
+        <div class="row" style="background-color:#fff;border-radius:6px 6px 0 0;">
+            <div class="span3">
+                <div class="" style="height: 30px"></div>
+            </div>
+        </div>
+        <div class="row" style="background-color:#fff;border-radius:0 0 6px 6px;">
+            <div class="span3">
+                <div class="mylogo">
+                     <div><a href="/""><img src="/static/themes/rebang/images/澳洲一刻头网站LOGO.png"></a></div>         
+                </div>
+                <div class="" style="height: 20px"></div>
+            </div>
+            <div class="span6">
+                <div style="padding-left:30px">
+                    <div class="" style="height: 20px"></div>
+                    <div class="shadow">澳洲网站导航</div>        
+                </div>
+            </div>
+        </div>
+</div>
+<div id="content_warp"> 
+<div id="left">
+
+<div class="outline_top">
+<div class="text_middle"> <a href="http://weather.theage.com.au/local.jsp">澳洲天气预报 </a> / <a href="http://tianqi.2345.com/">中国天气预报</a></div>
+<div class="text_middle"> <a href="http://24timezones.com/">澳洲各大城市现在时间</a> / <a href="http://24timezones.com/au_map/australia_time.htm">世界时间</a></div>
+<div class="text_middle"> <a href="http://www.boc.cn/sourcedb/whpj/">中行实时汇率</a> /  <a href="http://www.kuaidi100.com/">各种快递查询</a></div>
+</div>
+
+<div class="outline">
+<h2>常用网站</h2>
+<ul class="sites_list"> 
+
+<div class="top_sites">
+<li> <a href="http://web2.qq.com/"> <nbsp>WebQQ </nbsp></a>
+<a href="http://www.facebook.com/"><nbsp>Facebook </nbsp></a> <a href="http://www.renren.com/"><nbsp>人人网</nbsp></a></li>
+<li>   <a href="http://www.qq.com/"><nbsp>腾讯</nbsp></a>
+   <a href="http://www.sina.com.cn/"><nbsp>新浪</nbsp></a> 
+  <a href="http://www.163.com/"><nbsp>网易</nbsp></a> 
+  <a href="http://www.sohu.com/"><nbsp>搜狐</nbsp></a> </li>
+<li><a href="http://www.youtube.com/"><nbsp>Youtube</nbsp></a> <a href="http://www.youku.com/"><nbsp>优酷网</nbsp></a> <a href="http://www.ku6.com/"><nbsp>酷6网</nbsp></a></li>
+<li><a href="http://www.abc.net.au/iview/"><nbsp>ABC在线节目</nbsp></a> <a href="http://www.sbs.com.au/ondemand"><nbsp>SBS Ondemand</nbsp></a> </li>
+</div>  
+
+<li> <a href="http://www.immi.gov.au/">澳洲移民局</a> <span class="e_version">[英文]</span></li>
+<li><a href="http://au.china-embassy.org/chn/">中国驻澳大使馆</a>(<a href="http://sydney.chineseconsulate.org/chn/zlszl/">悉尼</a>/<a href="http://melbourne.china-consulate.org/chn/lxwm123/">墨尔本</a>/<a href="http://brisbane.china-consulate.org/chn/">布里斯班</a>)</li>
+<li><a href="http://studyinaustralia.gov.au/sia/zh/home.htm">澳洲政府官方留学网站</a></li>
+<li><a href="http://www.australia.com/">澳洲政府官方旅游网站</a></li>
+<li><a href="http://www.truelocal.com.au/">TrueLocal </a> <span>（澳洲商户信息） </span> <span class="e_version">[英文] </span></li>
+<li><a href="http://www.serviceseeking.com.au/">Service Seek </a> <span>寻找本地水工、电工、装修等Handy Man的网站 </span> <span class="e_version"> [英文]</span></li>
+</ul>
+</div>
+
+<div class="outline">
+<h2>澳洲各大城市交通/航班查询</h2>
+<ul class="sites_list space_b"> 
+
+<li> <b>悉尼</b>---<a href="http://www.131500.com.au/">出行计划</a><br> 
+<span> <a href="http://www.131500.com.au/">火车、汽车、轮渡时间表</a> </span> <br> 
+<span> <a href="http://www.metrotransport.com.au/network/overview/monorail">单轨时刻表</a> &nbsp; &nbsp; <a href="http://www.metrotransport.com.au/network/overview/lightrail">轻轨时刻表 </a> </span><br>
+<span><a href="http://www.sydneyairport.com.au/">航班(Mascot机场)</a></span>
+</li>
+
+<li> <b>墨尔本</b>---<a href="http://ptv.vic.gov.au/">出行计划</a><br>
+<span> <a href="http://ptv.vic.gov.au/timetables">火车、电车、汽车时刻表</a> </span><br>
+<span> <a href="http://melbourneairport.com.au/">航班(Tullamarine机场)</a> </span>
+</li>
+
+<li> <b>布里斯班</b>---<a href="http://jp.translink.com.au/travel-information/journey-planner">出行计划</a><br>
+<span> <a href="http://jp.translink.com.au/travel-information/network-information/timetables"> 火车、渡轮时刻表</a> </span> <br>
+<span> <a href="http://www.bne.com.au/arrivals-departures/arrivals-departures">航班(布里斯班机场)</a></span>
+</li>
+
+<li> <b>阿德莱德</b>---<a href="http://timetables.adelaidemetro.com.au/ttsearch.php">出行计划</a> <br>
+<span><a href="http://timetables.adelaidemetro.com.au/ttsearch.php">汽车时刻表</a> </span> <br> 
+<span> <a href="http://www.adelaideairport.com.au/">航班(阿德莱德机场)</a> </span>
+</li>
+
+<li> <b>珀斯</b>---<a href="http://www.transperth.wa.gov.au/">出行计划</a> <br> 
+<span><a href="http://www.transperth.wa.gov.au/TimetablesMaps.aspx">火车、汽车、轮渡时刻表</a></span> <br> 
+<span><a href="http://www.perthairport.com.au/">航班（珀斯机场）</a></span>
+</li>
+</ul>
+</div>
+
+<div class="outline">
+<h2>澳洲主要汽车租赁公司 [英文] <a name="telco" id="car-rental"></a></h2>
+<ul class="sites_list"> 
+<li>  ◎<a href="http://www.avis.com.au/">Avis</a> ◎<a href="http://www.hertz.com.au/">hertz</a> ◎<a href="http://www.budget.com.au/">budget</a></li>
+<li>  ◎<a href="http://www.europcar.com.au/">Europcar</a>  ◎<a href="http://www.thrifty.com.au/">thrifty</a> </li>
+</ul>
+</div>
+
+
+<div class="outline">
+<h2>字典/翻译</h2>
+<ul class="sites_list"> 
+<li> <a href="http://translate.google.com/">GOOGLE 在线翻译</a></li>
+<li> <a href="http://dict.cn/">词海在线字典</a> / <a href="http://www.iciba.com/">金山词霸在线字典 </a> </li>
+<li> <a href="http://dictionary.cambridge.org/">Cambridge Online Dictionary</a></li>
+<li> <a href="http://www.inputking.com/chinese/">在线汉语输入法</a>/ <a href="http://ime.baidu.com/online.html">百度</a> <a href="http://py.qq.com/web/">QQ</a>在线汉语输入法</li>
+<li>电话:131450<a href="http://www.immi.gov.au/living-in-australia/help-with-english/help_with_translating/how-use-tis/non-english-speakers.htm"> 澳政府提供的免费电话翻译</a></li>
+</ul>
+</div>
+
+
+<div class="outline">
+<h2>知识问答</h2>
+<ul class="sites_list"> 
+<li> <a href="http://zhidao.baidu.com/">百度知道</a> 大众杂七杂八知识问答 </li>
+<li> <a href="http://www.zhihu.com/">知乎</a> 文艺青年的问答网站 </li>
+<li> <a href="http://sf.gg/">Segment Fault</a> IT开发者问答社区</li>
+<li> <a href="http://www.120ask.com/">有问必答网</a> 医药知识问答</li>
+<li> <a href="http://www.quora.com/Australia">Quora</a> 社会知识问答网站 [英文] </li>
+<li> <a href="http://stackoverflow.com/">Stack OverFlow</a> 计算机专业问答[英文] </li>
+<li> <a href="http://au.answers.yahoo.com/">Yahoo Answers</a> 全球知识问答 [英文]</li>
+</ul>
+</div>
+
+
+<div class="outline">
+<h2>澳洲四大银行 [英文] <a name="banks" id="banks"></a></h2>
+<ul class="sites_list"> 
+<li> <a href="http://www.commbank.com.au/">CommonWealth Bank</a></li>
+<li> <a href="http://www.anz.com.au/">ANZ</a> </li>
+<li> <a href="http://www.westpac.com.au/">Westpac Bank </a></li>
+<li> <a href="http://www.nab.com.au/">NAB</a> (所有客户都无账户费)</li>
+<li> <a href="http://edu.taisha.org/bbs/viewthread.php?tid=849538&extra=&page=1">在来澳之前开个银行账户</a></li>
+</ul>
+</div>
+
+<div class="outline">
+<h2>澳洲主要电信 [英文] <a name="telco" id="banks2"></a></h2>
+<ul class="sites_list"> 
+<li> <a href="http://www.telstra.com.au/">Telstra</a>（座机/手机/宽带网络）</li>
+<li> <a href="http://www.optus.com.au/">Optus</a> （手机/座机/宽带网络）</li>
+<li> <a href="http://www.vodafone.com.au/">Vodafone</a> （手机/宽带网络）</li>
+<li> <a href="http://www.virginmobile.com.au">Virgin Mobile</a> （手机/宽带网络）</li>
+<li> <a href="http://www.tpg.com.au/">TPG </a> (宽带网络/手机/座机)</li>
+<li> <a href="http://www.tio.com.au/"><b>TIO</b></a> 电信相关问题投诉</li>
+</ul>
+</div>
+
+<div class="outline">
+<h2>免费旅游信息中心<a name="telco" id="banks2"></a></h2>
+<ul class="sites_list"> 
+<li>澳政府提供的免人工费旅游信息服务</li>
+<li> <a href="http://www.visitvictoria.com/Regions/Melbourne/Travel-information/Visitor-information-centres.aspx">墨尔本地址(Visitor Info Centres)</a></li>
+<li>◎<a href="https://maps.google.com.au/maps?q=2+Swanston+Street,+Melbourne,+Victoria&hl=en&ll=-37.81737,144.967464&spn=0.004806,0.009645&sll=-37.817365,144.967481&layer=c&cbp=13,71.23,,0,14.74&cbll=-37.817371,144.967459&gl=AU&hnear=2+Swanston+St,+Melbourne+Victoria+3000&t=m&z=17&iwloc=A&panoid=-c8J5Q3Mxz-T9jBUcRUWJA">2 Swanston Street(火车站对面) </a></li>
+<li>◎<a href="https://maps.google.com.au/maps?q=321+Bourke+Street,+Melbourne,+Victoria,+Australia&hl=en&ll=-37.813961,144.964166&spn=0.004806,0.009645&sll=-37.813963,144.96417&sspn=0.00484,0.009645&gl=AU&hnear=321+Bourke+St,+Victoria+3000&t=m&z=17&layer=c&cbll=-37.813961,144.964166&panoid=vC62HqEjvAxSiBLpuLULfw&cbp=13,74.63,,0,3.3">321 Bourke Street附近</a></li>
+<li> <a href="http://www.shfa.nsw.gov.au/sydney-For_visitors-Sydney_Visitor_Centres.htm">悉尼地址(Sydney Visitor Centres)</a></li>
+<li>◎<a href="http://maps.google.com/maps?q=Sydney+Visitor+Centres,+Argyle+Street,+The+Rocks,+New+South+Wales,+Australia&hl=en&ll=-33.856856,151.20801&spn=0.010103,0.01929&oq=Sydney+Visitor+Centres&hq=Sydney+Visitor+Centres,&hnear=Argyle+St,+The+Rocks+New+South+Wales+2000,+Australia&t=m&z=16&iwloc=A">Corner of Argyle and Playfair St. </a></li>
+<li>◎<a href="/">Cockle Bay Wharf and Harbourside</a></li>
+
+</ul>
+</div>
+
+
+<div class="outline">
+<h2>手机SIM卡/预付费手机 [英文] <a name="sim-prepay-phone" id="banks3"></a></h2>
+<ul class="sites_list"> 
+<li> <a href="http://woolworthsmobile.com.au/">Woolwealth mobile</a> (使用Optus网络)</li>
+<li> <a href="https://www.aldimobile.com.au/">Aldi</a> (使用Telstra的部分网络) <nbsp class="new">new~</nbsp></li>
+<li> <a href="http://www.amaysim.com.au/">Amaysim</a>  (收费简单，适合澳洲境内)</li>
+<li> <a href="http://www.lebara.com.au/">Lebara</a> (适合国际长途)</li>
+
+</ul>
+</div>
+
+<div class="outline">
+<h2>软件下载<a name="software" id="software"></a></h2>
+<ul class="sites_list"> 
+<li> <a href="http://intl.imqq.com/download.html">QQ英文版</a> / <a href="http://im.qq.com/qq/2010/standard_sp3/">中文版</a> / <a href="http://im.qq.com/qq/mac/">苹果版</a></li>
+<li> <a href="http://www.windowslive.com.au/messenger.aspx">MSN英文版 </a>/ <a href="http://www.windowslive.cn/get/">中文版</a> </li>
+<li> <a href="http://www.rarlab.com/download.htm">WINRAR英文版 / 中文版</a> </li>
+<li> <a href="http://www.mozilla.com/en-US/firefox/">Firefox </a> / <a href="http://www.g-fox.cn/">火狐</a> / <a href="http://www.google.com/chrome">Chrome Browser</a></li>
+<li> <a href="http://www.google.com/ime/pinyin/">Google拼音输入法</a> / <a href="http://pinyin.sogou.com/">搜狗拼音输入法</a> </li>
+<li> <a href="http://www.foobar2000.org/download">FOORBAR</a> / <a href="http://www.xiazaiba.com/html/57.html">千千静听</a>(音乐播放器)</li>
+<li> <a href="http://www.360.cn/down/soft_down2-3.html">360安全卫士 </a> / <a href="http://www.pctutu.com/download.html">超级兔子</a>(恶意程序清除)</li>
+<li> <a href="http://www.videolan.org/vlc/">VLC </a>  / <a href="http://www.splayer.org/?lang=cn">射手播放器</a>(影音播放器)</li>
+<li> <a href="http://www.fuxinsoftware.com.cn/downloads/">福昕PDF阅读器</a> / <a href="http://get.adobe.com/reader">PDF Reader</a>(PDF阅读)</li>
+<li> <a href="http://www.avira.com/en/free-download-avira-antivir-personal">Avira AntiVir </a> / (免费杀毒软件) </li>
+</ul>
+</div>
+
+<div class="outline">
+<h2>软件下载站点<a name="software-download" id="software-download"></a></h2>
+<ul class="sites_list"> 
+<li> <a href="http://www.xiazaiba.com/">下载吧</a> / <a href="http://www.xdowns.com/">绿色软件联盟</a></li>
+<li> <a href="http://www.onlinedown.net/">华军软件园</a> / <a href="http://www.appinn.com/">小众软件</a></li>
+</ul>
+</div>
+
+<div class="outline">
+<h2>电影/音乐下载(P2P)站点<a name="p2p" id="p2p"></a></h2>
+<ul class="sites_list"> 
+<li> <a href="http://thepiratebay.org/">The Pirate Bay </a> 全球最大影视资源下载站</li>
+<li> <a href="http://www.yyets.com/">人人影视</a>各种影视下载，一般均有中文字幕</li>
+<li> <a href="http://www.dytt8.net/">电影天堂</a>各种影视节目下载</li>
+<li> <a href="http://dianying.fm/">电影FM</a>国内电影资源搜索</li>
+<li> <a href="http://www.verycd.com/">veryCD</a>曾经是国内最大的影视资源下载站</li>
+</ul>
+</div>
+
+<div class="outline">
+<h2>网络硬盘</h2>
+<ul class="sites_list"> 
+<li> <a href="http://www.mediafire.com/">Mediafire</a> / <a href="http://www.115.com/">115网络硬盘</a></li>
+</ul>
+</div>
+
+<div class="outline">
+<h2>澳洲华人博客<a name="australia-chinese-blog" id="australia-chinese-blog"></a></h2>
+<ul class="sites_list"> 
+<li> <a href="http://blog.sina.com.cn/chen88366">陈静日记</a></li>
+<li> <a href="http://blog.tianya.cn/blogger/blog_main.asp?BlogID=491165">生活在别处</a> </li>
+<li> <a href="http://blog.sina.com.cn/jinkaiping">金凯平的BLOG</a></li>
+<li> <a href="http://blog.sina.com.cn/aozhouliyang">澳洲李洋 </a></li>
+<li> <a href="http://blog.sina.com.cn/U/1707722377">新移民在澳洲</a></li>
+</ul>
+</div>
+
+<div class="outline">
+<h2>中文网址导航网站<a name="chinese-navigation-website" id="chinese-navigation-website"></a></h2>
+<ul class="sites_list"> 
+<li> <a href="http://hao.qq.com/">QQ网站导航</a></li>
+<li> <a href="http://www.114la.com/">114网址导航</a> </li>
+<li> <a href="http://hao.360.cn/">360网址导航</a> </li>
+<li> <a href="http://www.tao123.com/">淘网址导航</a> </li>
+<li> <a href="http://www.hao123.com/">好123 </a></li>
+<li> <a href="http://www.265.com">265上网导航</a> </li>
+</ul>
+</div>
+
+<div class="outline">
+<h2>其它<a name="others" id="others"></a></h2>
+<ul class="sites_list"> 
+<li> <a href="http://bbs.taisha.org/viewthread.php?tid=1300212&highlight=??%C3%AC?%C3%AA??t#">澳洲新人必备常识1</a> （From 太傻论坛）</li>
+<li> <a href="http://bbs.taisha.org/thread-1441047-1-1.html">澳洲新人必备常识2</a> （From 太傻论坛）</li>
+<li> <a href="http://511080.taobao.com/">高清电影拷贝</a></li>
+<li> <a href="http://www.alexa.com/topsites/countries/AU">澳洲访问量最高的前500网站</a></li>
+</ul>
+</div>
+
+<div class="clear">  </div>
+</div> <!-- end of left content  -->
+
+
+<div id="right">
+
+<div class="outline" id="more_articles">
+
+
+
+
+<div class="outline">
+<h2>澳洲主流新闻网站[英文]<a name="mainstream-news"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://news.com.au/">News.com.au</a>  　　 <a href="http://ninemsn.com.au/">Nine MSN</a> 　　<a href="http://www.smh.com.au/">SMH</a>  　　<a href="http://www.theage.com.au/">The Age</a> 　　<a href="http://www.yahoo.com.au/">Yahoo.com.au </a> 　　<a href="http://www.abc.net.au/"> ABC</a>　</li> 
+</ul>
+</div>
+
+
+<div class="outline">
+<h2>澳洲主要中文网站<a name="chinese-news-websites"></a></h2>
+<ul class="sites_list"> 
+<li>
+<a href="http://www.yeeyi.com/">亿忆网</a>
+<a href="http://www.oursteps.com.au/">新足迹</a> (<a href="http://www.oursteps.co/">国内访问网址</a>)
+<a href="http://www.1688.com.au/">澳洲中文报业集团</a>
+<a href="http://news.ninemsn.com.au/"> </a><a href="http://xkb.com.au/">新快网</a>
+<a href="http://www.sbs.com.au/chinese/">SBS中文</a>
+<a href="http://aus.tigtag.com/">滴答网</a> </li>
+</ul>
+</div>
+
+
+<div class="outline" id="rent">
+<h2>澳洲房屋出租/购买</h2>
+<ul class="sites_list"> 
+<li><a href="http://www.move2rent.com/">Move2rent</a> 澳洲最大华人房屋租赁网站。另有家庭旅馆，二手商品，招聘求职等信息。</li> 
+
+<li><a href="http://www.yeeyi.com/bbs/forum.php?mod=forumdisplay&fid=142">忆忆网房屋出租论坛</a> 每天有大量新信息。 </li>
+<li><a href="http://bbs.tigtag.com/forum-48-1.html">滴答网房屋出租论坛</a> 每天有较多的信息。</li>
+<li><a href="http://ozhouse.1688.com.au/rent/">1688.com.au 房屋租出租栏目</a> 基本上是从他们的报纸《昆士兰日报》和《墨尔本日报》来到信息。</li>
+<li><a href="http://www.ozchinese.com/">澳洲中文网，房屋租出租论坛</a> 主要为悉尼地区。其它地区较少 </li>
+<li><a href="http://au.easyroommate.com/">EasyRoommate</a> 找老外share房子。免费注册后，可以把你需要的最新房子信息发到你的邮箱。[英文网站] </li>
+<li> ◎<a href="http://www.realestate.com.au/">Realestate </a>  ◎<a href="http://www.domain.com.au/">Domain</a>澳洲最大的两个房地产网站。主要为房屋购买，出租(整租)。[英文网站]</li>
+</ul>
+</div>
+
+
+<div class="outline" id="job">
+<h2>求职招聘<a name="job" id="job"></a></h2>
+<ul class="sites_list"> 
+<li>◎ <a href="http://www.seek.com.au/">Seek</a> ◎ <a href="http://mycareer.com.au/">My Career</a> 澳洲最大的两个招聘求职网站。主要为FULL TIME 工作，也有少量PART TIME 工作。[英文网站]</li>
+<li><a href="http://www.gumtree.com.au/">Gumtree</a>澳洲最大的分类信息网站。击网站右侧上面的JOB可以查看所有的招聘。基本上都是临时性的小工作。信息来源比较混乱。注意辨别真假。 [英文网站] </li>
+<li><a href="http://www.yeeyi.com/bbs/forum.php?mod=forumdisplay&fid=161">忆忆网求职招聘论坛</a>主要为华人临时性工作。每天有大量信息。</li>
+<li><a href="http://ozjob.1688.com.au/">澳洲招工网（澳洲中文报业集团）</a> 每天信息不是很多，都是从他们的报纸上来的。</li>
+<li><a href="http://bbs.tigtag.com/forum-137-1.html">滴答网招聘论坛 </a> 主要为华人临时性工作。比较杂乱。主要为悉尼地区。</li>
+<li><a href="http://www.fairwork.gov.au/">Fair Work</a> 澳洲政府设立的工作纠纷投诉网站。</li>
+</ul>
+</div>
+
+
+<div class="outline" id="education-agency">
+<h2>留学移民中介<a name="education-agency" id="education-agency"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://www.idp.com/about_idp/contact_idp.aspx">IDP </a>IDP是由澳洲38所大学联合建立的招生机构。机构庞大，服务滞缓。</li>
+<li><a href="http://www.globeedu.com/country/au/index.shtml">澳际 </a> 在国内多个地方有办事处。悉尼，墨尔本也有分部。  </li>
+<li><a href="http://www.ozstudynet.com/">澳州留学网 </a> 在澳洲及国内有多个办事处。</li>
+<li><a href="http://www.do360.com/aboutus/contact_index.asp">出国梦</a> 澳洲较大留学中介。在悉尼，墨尔本有分部。</li>
+<li><a href="http://zhongheng-group.com/">中恒集团</a> 墨尔本的留学、移民、生意买卖中介</li>
+</ul>
+</div>
+
+<div class="outline" id="computers">
+<h2>电脑/电器/电脑配件<a name="computers" id="computers"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://www.msy.com.au/">MSY</a> 这个可能是最便宜的电脑配件连锁零售商。在他们的网站上查询你所需要东西的价格，然后寻找离你近的商店去买。很多人反应MSY服务态度比较差，而且经常缺货。[英文网站]</li>
+<li><a href="http://www.cpl.net.au/">CPL </a> 提供电脑相关各种配件，攒机，维修等服务。[英文网站] </li>
+<li><a href="http://pccasegear.com/">Pccasegear</a> 澳洲大型电脑配件连锁零售商之一。[英文网站]</li>
+<li><a href="http://www.shoppingexpress.com.au/">shoppingexpress</a> 大型电脑产品网上购物[英文网站]</li>
+<li><a href="https://www.mln.com.au/">MLN</a> 主要为笔记本电脑销售，维修。实体店在墨尔本。[英文网站]</li>
+<li><a href="http://www.centrecom.com.au/">Centre Com</a> 主要为笔记本电脑,苹果电脑。实体店在墨尔本。联想电脑在澳洲的代理商[英文网站]</li>
+<li><a href="https://www.pcdiy.com.au/">PCdiy</a> 主要提供电脑相关各种配件、笔记本电脑等。有实体店。[英文网站]</li>
+<div class="dividing_line"> &nbsp;</div>
+<li>◎<a href="http://www.technologymarkets.com.au/">VIC</a> ◎<a href="http://www.computermarkets.com/">NSW/ACT</a> 周末电脑市场信息。周末电脑市场是二手、廉价电脑配件和盗版光盘市场，每个周末在不同的地方举行。[英文网站]</li>
+<div class="dividing_line"> &nbsp;</div>
+<li> ◎<a href="http://www.harveynorman.com.au/">HarveyNorman</a> ◎<a href="http://www.dicksmith.com.au/">DickSmith</a> ◎<a href="http://www.officeworks.com.au/">Officework</a> 澳洲前几大电脑电器连锁商。虽然这个几个商店侧重点各有不同，但都有电脑电器产品。优点是他们的商店随处都是，缺点是价格贵。[英文网站]</li>
+<div class="dividing_line"> &nbsp;</div>
+<li> ◎<a href="http://www.pconline.com.cn/">太平洋电脑网</a>  ◎<a href="http://www.pconline.com.cn/">中关村在线</a>  ◎<a href="http://www.it168.com/">IT168电脑</a> 中文电脑资讯类网站</li>
+<li> ◎<a href="http://www.pcbeta.com/">远景论坛</a>  ◎<a href="http://www.csdn.net/">CSDN</a>  中文计算机技术站点。</li>
+<li> <a href="http://www.whirlpool.net.au/">Whirlpool </a>澳洲本地宽带，手机，电脑等话题的论坛，可能是澳洲最有人气的论坛。[英文网站]</li>
+</ul>
+</div> 
+
+<div class="outline" id="secondhand-markets">
+<h2>二手市场<a name="secondhand-markets" id="secondhand-markets"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://www.yeeyi.com/bbs/forum.php?mod=forumdisplay&fid=304">忆忆网二手论坛</a>每天更新信息较多。</li>
+<li><a href="http://www.ozchinese.com/bbs/forum-22-1.html">澳洲中文网跳蚤市场,二手市场论坛</a> 每天有较多信息，注意选择相应的地区（在论坛标题的右侧）</li>
+<li><a href="http://bbs.tigtag.com/forum-146-2.html">滴答网二手论坛 </a> 每天有较多的信息。</li>
+<li><a href="http://www.gumtree.com.au/">Gumtree&nbsp;</a> 澳洲最大的分类信息网站。进入网站后，点击左侧的stuff for sale 。[英文网站]</li>
+<li><a href="http://www.ebay.com.au/">Ebay 澳洲站&nbsp;</a> 全世界都知道的网站，能不能找到你想要的东西就看你的能力和运气 了。[英文网站]</li>
+<li><a href="http://www.quicksales.com.au/">Quick Sales</a> 澳洲本地网上二手物品买卖网站[英文网站]</li>
+</ul>
+</div>
+
+
+<div class="outline" id="australia-chinese-websites">
+<h2>澳洲中文网站<a name="australia-chinese-websites" id="australia-chinese-websites"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://www.yeeyi.com/">亿忆网 </a>可能是澳洲最大的中文网站。包括八卦新闻/各种论坛及澳洲生活的方方面面。</li>
+<li><a href="http://www.oursteps.com.au/">新足迹</a> 主要面向新移民的论坛.包括 <a href="http://www.oursteps.com.au/bbs/forumdisplay.php?fid=1">我爱我家</a> / <a href="http://www.oursteps.com.au/bbs/forumdisplay.php?fid=1">生活百科</a> / <a href="http://www.oursteps.com.au/bbs/forumdisplay.php?fid=51">投资理财</a> / <a href="http://www.oursteps.com.au/bbs/forumdisplay.php?fid=49">车行天下</a> / <a href="http://www.oursteps.com.au/bbs/forumdisplay.php?fid=44">亲子育儿</a> / <a href="http://www.oursteps.com.au/bbs/forumdisplay.php?fid=95">房屋租赁</a> 等栏目</li>
+<li><a href="http://bbs.taisha.org/forum-118-1.html">太傻论坛澳洲分支</a> 适合新到同学的论坛。有较多实用信息。另有两个分相关论坛，<a href="http://www.taisha.org/bbs/forum-145-1.html">澳洲签证</a> / <a href="http://www.taisha.org/bbs/forum-70-1.html">澳洲留学移民申请 </a></li>
+<li><a href="http://www.ozchinese.com/">澳洲中文网站</a> 澳洲综合信息网,垃圾信息很多。</li>
+<li>地域性中文网站 ◎<a href="http://www.snowpear.com/">雪梨网</a> (悉尼地区)  ◎<a href="http://www.7fan8.net/">吃饭吧</a> (墨尔本地区） ◎<a href="http://www.inbrisbane.net/">布里斯班华人网</a>(布里斯班地区) </li>
+</ul>
+</div>
+ 
+<div class="outline" id="study-in-australia"> 
+<h2>澳洲留学信息<a name="study-in-australia" id="study-in-australia"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://myuniversity.gov.au/">My University</a> 澳洲政府建立的官方大学信息网站。提供所有澳洲大学的最新数据，包括，课程、学生数量、国际学生比例、就业情况等等详细数据。</li>
+<li><a href="http://cricos.deewr.gov.au/">澳洲所有学校课程查询 / 学校合法性查询（CRICOS  查询））</a> 澳洲政府教育部官方网站</li>
+<li><a href="http://studyinaustralia.gov.au/Sia/zh/Home.htm">学在澳洲 </a>澳洲留学的各种信息。这是由澳大利亚政府建立的官方网站。可以<a href="http://www.studyinaustralia.gov.au/en/CourseSearch">查询</a>所有学校的课程。 </li>
+<li><a href="http://www.myschool.edu.au/">My School</a> 澳洲政府建立的官方初中，高中学校综合信息网站。</li>
+<div class="dividing_line"> &nbsp;</div>
+<li><a href="http://www.studymelbourne.vic.gov.au/chinese">学在墨尔本</a> 关于在墨尔本学习的各种信息。这是由澳大利亚维州政府建立的官方网站。</li>
+<li><a href="http://www.studyadelaide.com/">学在阿德莱德</a> 关于在阿德莱德学习的各种信息。这是由南澳政府建立的官方网站。</li>
+<li><a href="http://pertheducationcity.com.au/">珀斯留学</a> 关于在珀斯学习的各种信息。这是由西澳政府建立的官方网站。</li>
+</ul>
+</div>
+
+<div class="outline" id="tourist-websites">
+<h2>澳洲旅游网站<a name="tourist-websites" id="tourist-websites"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://www.australia.com/">澳洲旅游官方网站 </a>澳大利亚政府建立的介绍澳洲旅游信息的网站。 </li>
+<li>墨尔本华人旅行社 <a href="http://extragreen.com.au/ChineseSite">常青</a> <a href="http://www.grandcitytours.com/cn/">宏城</a> <a href="http://www.7fan8.net/7fan8/shop/cate_1202.html">more......</a></li>
+<li>澳洲机票预定 ◎<a href="http://www.flightcentre.com.au/">Flightcentre</a>  ◎<a href="http://www.jetset.com.au/">Jetset</a>  ◎<a href="http://www.zuji.com.au/">Zuji </a> ◎<a href="http://www.webjet.com.au/">Webjet</a>[英文网站]</li>
+<li>澳洲主要航空公司 ◎<a href="http://www.qantas.com.au/">Qantas</a> ◎<a href="http://www.virginaustralia.com/">Virgin</a> ◎<a href="http://www.jetstar.com.au/">Jetstar</a> ◎<a href="http://www.tigerairways.com/au/en">Tiger Airways</a>[英文网站]</li>
+</ul>
+</div>
+
+<div class="outline" id="hotel-hostel-backpackers">
+<h2>旅馆/青年旅舍/背包客<a name="hotel-hostel-backpackers" id="hotel-hostel-backpackers"></a></h2>
+<ul class="sites_list"> 
+<li>◎<a href="http://www.hostelworld.com/">Hostelworld</a> <a href="http://www.tripadvisor.com/">◎Tripadvisor</a> Hostel的查询，介绍，评价及预订 [英文网站]</li>
+<li>◎<a href="http://www.agoda.com.au/">Agoda</a>  ◎<a href="http://www.hotel.com.au/">Hotel.com.au</a>  Hotel的查询，介绍，评价及预订</li>
+<li>◎<a href="http://nomadshostels.com/">Nomads</a>  ◎<a href="http://www.stayatbase.com/">Base Backpackers</a> 澳洲，新西兰连锁背包客旅店 [英文网站]</li>
+<li><a href="http://www.yha.com.au/zh">YHA </a> 澳洲连锁背包客旅店 </li>
+<li><a href="http://www.rydges.com/locations">Rydges</a> 澳洲连锁 HOTEL[英文网站]</li>
+</ul>
+</div>
+
+
+<div class="outline" id="shopping-websites">
+<h2>综合购物网站<a name="shopping-websites" id="shopping-websites"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://www.taobao.com/">淘宝</a> 淘宝相当于一个超级大商场，什么都有，能不能买到你要的东西，取决于你的淘货能力。 </li>
+<li><a href="http://www.360buy.com/">京东商城</a> 可能是国内最大最有价格优势的网上购物网站。</li>
+<li><a href="http://www.dangdang.com/">当当网</a> 以前以图书为主，现经营百货。</li>
+<li><a href="http://www.vancl.com/">凡客诚品</a> 以服装为主的综合购物网站。产品质量参差不齐。</li>
+<li><a href="http://www.vancl.com/">Zipia</a> 韩国时尚服饰网站。[英文网站]</li>
+<li><a href="http://www.strawberrynet.com/">草莓网</a> <a href="http://cn.strawberrynet.com/">中文站 </a> / <a href="http://au.strawberrynet.com/">澳洲站</a> 以化妆品为主。</li>
+<li>◎<a href="http://shop.yeeyi.com/">亿忆商城</a>  ◎<a href="http://uumall.com.au/">澳淘网</a> 仿效淘宝的澳洲网站。女生服饰为主。 </li>
+</ul> 
+</div>
+
+<div class="outline" id="shopping-websites-australia">
+<h2>澳洲购物网站<a name="shopping-websites-australia" id="shopping-websites-australia"></a></h2>
+<ul class="sites_list"> 
+<li>◎ <a href="http://www.groupon.com.au/">澳洲Groupon</a> ◎ <a href="http://spreets.com.au/">Spreets</a>  ◎ <a href="http://www.scoopon.com.au/">Scoopon</a> ◎ <a href="http://www.cudo.com.au/">Cudo</a> 澳洲四大团购网站 ◎ <a href="http://www.allthedeals.com.au/">All Deals</a>澳洲团购网站集合</li>
+<li><a href="http://groupgo.com.au/">澳洲团购网</a> 澳洲第一个中文团购网站 </li>
+<div class="dividing_line"> &nbsp;</div>
+<li><a href="http://www.topbuy.com.au/">Top Buy</a> 澳洲大型综合购物网站 [英文网站]</li>
+<li><a href="http://www.kogan.com.au/">Kogan</a> 澳洲去年销售量最大的电子产品购物网站。电视，照相机等[英文网站]</li>
+<li><a href="http://www.dwidigitalcameras.com.au/">DWI</a> 可能是澳洲最大照相器材网上商店[英文网站]</li>
+<li><a href="http://www.citiwideonline.com/">Citi Wide</a> 便宜照相器材、数码产品网上商店[英文网站]</li>
+<li><a href="http://www.theiconic.com.au/"> The Iconic</a> 澳洲大型服饰购物网站[英文网站]</li>
+<li><a href="http://www.styletread.com.au/"> Style Tread</a> 号称是澳洲最大的鞋类专卖。[英文网站]</li>
+<li><a href="http://www.catchoftheday.com.au/">Catch of the Day</a> 便宜电器,小家电。[英文网站]</li>
+<li><a href="http://www.shopbot.com.au/">Shopbot</a> 对比各个购物网站的价格 [英文网站]</li>
+<li><a href="http://www.ozbargain.com.au/"><b>Ozbargain</b></a> 可能是澳洲最大的打折信息网站，很多打折信息都有人评价，所以真实性比较高。[英文网站]</li>
+<li><a href="http://www.oursteps.com.au/bbs/forum.php?mod=forumdisplay&fid=89"> <b>新足迹-打折信息分论坛 </b></a> 各种华人感感兴趣的打折信息。是查询便宜机票的好地方。</li>
+<li><a href="http://www.cataloguecentral.com.au/">Cataloguecentral</a>搜集各大超市，商场的最新宣传册 [英文网站] </li>
+<li><a href="http://www.ozdazhe.com/">OZ打折网</a>搜集澳洲的各种打折信息。网站内容挺多。但问题是如何辨别这些打折信息的真假。</li>
+<div class="dividing_line"> &nbsp;</div>
+<li>◎<a href="http://www.golo.com.au/">GO-LO</a>  ◎<a href="http://www.dimmeys.com.au/">DIMMEYS</a> 便宜连锁超市（非在线购物网站ß） sencond hand shop </li>
+</ul> 
+</div>
+
+<div class="outline" id="insurce-compare-websites">
+<h2>保险/宽带/手机对比选择网站<a name="insurce-compare-websites" id="insurce-compare-websites"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://www.iselect.com.au/">I select</a> 医疗保险，车险等对比。[英文网站] </li>
+<li><a href="http://www.budgetdirect.com.au/">Budget Direct</a>车险，家庭财产险等对比。[英文网站] </li>
+<li><a href="http://youcompare.com.au/">You Compare</a>宽带，手机，保险，电力等价格比较。[英文网站] </li>
+<li><a href="http://www.finder.com.au/">Finder</a>信用卡、房屋贷款、保险、手机、宽带等价格比较。[英文网站] </li>
+<li><a href="http://www.choice.com.au/">Choice</a>是一个独立机构。提供各种电器产品的性能比较。为你购买电器提供比较客观的参考。该网站为收费网站[英文网站] </li>
+</ul> 
+</div>
+
+<div class="outline" id="online-video-tv">
+<h2>在线视频/在线电视<a name="online-video-tv" id="online-video-tv"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://www.youtube.com/">Youtube</a> 在线视频 / 在线电视</li>
+<li><a href="http://www.vimeo.com/">Vimeo</a> 有大量原创高清视频。和Youtue相比，该站有更多高质量的节目。[英文网站]</li>
+<li><a href="http://www.abc.net.au/iview/">ABC (Australia Broadcasting Corporation)</a> 澳洲政府电视台ABC在线节目 [英文网站]</li>
+<li><a href="http://www.sbs.com.au/ondemand">SBS ondemand</a> 澳洲政府多民族电视台SBS的在线视频，包括电影，纪录片，新闻等内容。</li>
+<li>◎<a href="http://www.youku.com/">优酷网</a>  ◎<a href="http://www.toodou.com/">土豆网</a>  ◎<a href="http://www.ku6.com/">酷6网 </a>国内视频网站</li>
+</ul> 
+</div>
+
+<div class="outline" id="art-culture-science">
+<h2>文化/艺术/科学<a name="art-culture-science" id="art-culture-science"></a></h2>
+<ul class="sites_list"> 
+<li>世界名校视频公开课 ◎<a href="http://v.163.com/open">网易</a>   ◎<a href="http://edu.sina.com.cn/video/open/">新浪 </a></li>
+<li><a href="http://www.douban.com/">豆瓣</a> 各种书籍，电影，唱片的评论网站。全中国的文艺青年都在这里。</li>
+<li><a href="http://www.wangxiaofeng.net/">不许联想 </a> 《三联生活》主笔的个人博客。以分析透彻的实事评论见长。</li>
+<li><a href="http://blog.sina.com.cn/zhudake">朱大可 </a> 著名文化学者、批评家。</li>
+<li><a href="http://www.mtime.com/">Mtime</a> 国内电影门户网站 </li>
+<li><a href="http://songshuhui.net/">科学松鼠会</a> 这是一个华语青年科学传播者的非营利机构</li>
+<li><a href="http://www.guokr.com/">果壳</a> 生活中的科学知识</li>
+<li><a href="http://www.immusoul.com/">土摩托日记</a> 关于科学，文化，音乐，旅游的博客</li>
+<li><a href="http://www.bullogger.com/">牛博网</a> 汇集当今优秀文化人的博客</li>
+</ul> 
+</div>
+
+<div class="outline" id="english-study">
+<h2>英语学习<a name="english-study" id="english-study"></a></h2>
+<ul class="sites_list"> 
+<li><a href="http://www.ted.com/">Ted</a> 是一个分享世界优秀思想的非盈利组织。所有视频可以下载或在线观看，配有各种语言的字幕。</li>
+<li>世界名校视频公开课，英语视频，中文字幕。 ◎<a href="http://v.163.com/open">网易</a>   ◎<a href="http://edu.sina.com.cn/video/open/">新浪 </a>  </li>
+<li><a href="http://www.sbs.com.au/ondemand">SBS ondemand</a> 澳洲多民族电视台SBS的在线视频，很多节目都有中文字幕。</li>
+<li><a href="http://www.yeeyan.org/">译言</a> 一个翻译优秀英语文章的网站。可以中英文对照阅读文章 </li>
+<li><a href="http://www.volunteer.com.au/">SEEKvolunteer</a> 可以查找义务工作者的网站。当volunteer无疑是提高英语的一个好机会。[英文网站]</li>
+</ul> 
+</div>
+
+<div class="clear"> </div>
+</div><!-- end of right content  -->
+
+<div class="clear"> </div>
+</div> <!-- end of content-warp -->
+
+    
+
+		<div id="footer">
+<div class="clear"> </div>
+
+
+<div class="copywrite"> ©2013 <a href="http://australian.sinaapp.com/">澳洲一刻</a> ♥ Inspired by aozhou123.com.<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F48a0a6443fd05180ee3a751a96671c3f' type='text/javascript'%3E%3C/script%3E"));
+</script></div>
+
+</div>  <!-- end of footer --> 	
+
+
+
+
+</body></html>

@@ -1,0 +1,20 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title}</div>
+<div class="main-box">
+
+<?py if t_key: ?>
+<form action="" method="post">
+<p><input type="text" name="title" value="${t_obj['title']}" style="width: 640px;" /></p>
+<p><textarea name="content" style="width: 640px; height: 210px;">${t_obj['content']}</textarea></p>
+<p><label>隐藏本文 <input type="checkbox" name="hide" value="1" #{'checked' if t_obj.get('hide','') else ''} /></label> 对外显示404</p>
+<p><input type="submit" value=" 提 交 " name="submit" class="textbtn" /></p>
+</form>
+
+<?py else: ?>
+<form action="" method="post">
+输入文章的Key 如t-1-9：
+<input type="text" name="key" value="" />
+<input type="submit" value=" 提 交 " name="submit" class="textbtn" />
+</form>
+<?py #endif ?>
+
+</div>

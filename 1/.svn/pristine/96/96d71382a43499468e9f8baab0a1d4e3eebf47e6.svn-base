@@ -1,0 +1,9 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title} （ 有人在下面的帖子回复或提起了你 ）</div>
+<div class="main-box">
+<?py if cur_user.notic: ?>
+<?py include("topic-items-notifications.html", topic_objs=cur_user.notic_objs) ?>
+<?py else: ?>
+<div class="no-topic-reply">没有未读提醒</div>
+<?py #endif ?>
+</div>
+

@@ -1,0 +1,19 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title}</div>
+<div class="main-box">
+
+<?py if t_obj: ?>
+<form action="" method="post">
+<p><input type="text" name="title" value="${t_obj.title}" style="width: 640px;" /></p>
+<p><textarea name="content" style="width: 640px; height: 210px;">${t_obj.con}</textarea></p>
+<p><input type="submit" value=" 提 交 " name="submit" class="textbtn" /></p>
+</form>
+
+<?py else: ?>
+<form action="" method="post">
+输入文章的Key 如红色部分 t-<span class="red">1-9</span>：
+<input type="text" name="key" value="" />
+<input type="submit" value=" 提 交 " name="submit" class="textbtn" />
+</form>
+<?py #endif ?>
+
+</div>

@@ -1,0 +1,9 @@
+﻿<cross-domain-policy>
+    <allow-access-from domain="*.taobao.com"/>
+    <allow-access-from domain="*.taobao.net"/>
+    <allow-access-from domain="*.taobaocdn.com"/>
+    <allow-access-from domain="*.tbcdn.cn"/>
+    <allow-access-from domain="*.allyes.com"/>
+    <allow-access-from domain="*.sinaapp.com"/>
+    <allow-access-from domain="*.42bang.com"/>
+</cross-domain-policy>

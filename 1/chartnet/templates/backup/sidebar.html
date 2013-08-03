@@ -1,0 +1,47 @@
+            <!-- block sidebar -->
+<aside role=sidebar>
+<section>
+    <h1>Recent Comments</h1>
+    <ul id="recent_posts">
+	{% for comment in coms %}
+        <li class="post">
+            {{ comment.author }} Says: <span class="grey"></span> <br/> <a href="/detailpost/{{comment.postid}}">{{ comment.content }}</a>
+        </li>
+	{% endfor %}
+    </ul>
+</section>
+
+<section>
+    <h1>Category</h1>
+    <ul id="Category_list">
+		{% for cat in cats %}
+        <li class="category">
+            <a title="View all posts filed under 不想分类" href="/?cat={{ cat.name }}">{{ cat.name }} <span class="tag_meta">({{ cat.id_num }})</span></a>
+        </li>
+		{% endfor %}
+    </ul>
+</section>
+
+<section>
+    <h1>Tags</h1>
+    <p id="top_tags">
+		{% for tag in tags %}
+        <a title="SAE" href="/?tags={{ tag.name }}">{{ tag.name }}</a> <span class="tag_meta">({{ tag.id_num }})</span> 
+		{% endfor %}
+    </p>
+</section>
+
+<section>
+    <h1>Link Broll</h1>
+    <ul id="Category_list">
+		{% for _link in links %}
+        <li class="category"><a href="{{_link.url}}" target="_blank">{{_link.name}}</a></li>
+		{% endfor %}
+    </ul>
+</section>
+
+<section>
+</section>
+
+</aside>
+            <!-- block sidebar end -->

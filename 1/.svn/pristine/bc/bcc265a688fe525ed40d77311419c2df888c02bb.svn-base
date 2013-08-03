@@ -1,0 +1,71 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+'''
+Created on Jun 12, 2013
+
+@author: ken
+'''
+from utils import feedparser
+#import feedparser  
+import logging
+
+REPLACE_FOND_HOLDER1 = "<font color=\"#c60a00\">"
+REPLACE_FOND_HOLDER2 = "</font>"
+
+
+
+def formatContent(string):
+    return string.replace(REPLACE_FOND_HOLDER1, "").replace(REPLACE_FOND_HOLDER2,"")
+
+def formatTime(time):
+    timestr = "%s/%s/%s %s:%s"%(time.tm_year, time.tm_mon, time.tm_mday, time.tm_hour, time.tm_min)
+    return timestr
+
+def readNews():
+    #read yodao news
+    #yodao
+    #url = ('http://news.youdao.com/search?q=%E6%BE%B3%E6%B4%B2%E7%A7%BB%E6%B0%91&doctype=rss')
+    #url = ('http://news.youdao.com/search?q=%E6%BE%B3%E6%B4%B2%E7%A7%BB%E6%B0%91+site%3A163.com&doctype=rss')
+    #soso
+    url=('http://vdap.soso.com/rss?tag=1&src=-10&ofmt=xml&kd=n&full=1&w=%B0%C4%D6%DE%D2%C6%C3%F1')
+    d = feedparser.parse(url)  
+    if d is None:
+        return
+    result = []
+#     print d.feed.title
+#     print d.feed.subtitle
+    for e in d.entries:
+        item = {}
+#         item['title'] = formatContent(e.title)
+        item['title'] = e.title
+        item['link'] = e.link
+#         item['description'] = formatContent(e.description)
+        item['description'] = e.description
+        if item['description'].find("<img ") >= 0:
+            item["hasImg"] = "True"
+        else:
+            item["hasImg"] = "False"
+        item['source'] = e.source.title
+        item['pubdate'] = e.issued
+        #item['pubdate'] = e.published_parsed
+        #print e.issued
+        #filter the items with the same title
+        appendFlag = True
+        for i in result:
+            if i['title'] == item['title']:
+                appendFlag = False
+        if appendFlag:
+            result.append(item)
+    return result
+#     print d.version
+#     print d.encoding 
+#     print d.headers.get('Content-type') 
+    
+if __name__ == '__main__':
+    # Process the JSON string.
+    for i in  readNews():
+        print i['title'] 
+        print i['link']
+        print i['description']
+        print i['source'] 
+        print i['pubdate'] 

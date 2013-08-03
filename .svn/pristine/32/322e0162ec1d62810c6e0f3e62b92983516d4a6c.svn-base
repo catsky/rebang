@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="zh-CN"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>田园小屋 · Countryside's house - 一个都市人的理想乡</title>
+  <meta name="author" content="ego008" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="alternate" type="application/rss+xml" title="Countryside's house blog RSS Feed" href="http://chartnet.sinaapp.com/feed" />
+  <link rel="shortcut icon" href="http://chartnet.sinaapp.com/favicon.ico" type="image" />
+
+  <!--<link href="/static/themes/rebang/bootstrap.css" rel="stylesheet" type="text/css" />
+  
+  <link href="/static/themes/rebang/front.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/static/themes/rebang/topics.css" media="screen, projection" rel="stylesheet" type="text/css" /> -->
+  <link href="/static/themes/octopress/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> 
+
+  <script src="/static/jquery-plugin/jquery-1.6.4.js"></script>
+  <script src="/static/themes/octopress/js/main.js"></script>
+  
+  <link rel='index' title="Countryside's house" href='{{ BASE_URL }}' />
+  <meta name="description" content="田园小屋 · Countryside's house - 一个都市人的理想乡" />
+  <meta name="keywords" content="SAE,python,flask,blog" />
+  <link rel="canonical" href="{{ BASE_URL }}" />
+
+<script type="text/javascript">
+    $(function(){
+        $("#go-to-top").click(function(){
+            $("html, body").animate({'scrollTop': 0}, 400);
+            return false;
+        });
+        $(window).scroll(function() {
+            var top = $(document).scrollTop();
+            var g = $("#go-to-top");
+            if (top > 300 && g.is(":hidden")) {
+                g.fadeIn();
+            } else if(top < 300 && g.is(":visible")) {
+                g.fadeOut();
+            }
+        }); 
+    })
+    
+</script>
+</head>
+<body>
+  <header role="banner">
+    <hgroup>
+      <h1><a href="/">c-house</a></h1>
+        <h2>一个都市人的理想乡</h2>
+    </hgroup>
+  </header>
+  <nav role=navigation>
+    <ul role=subscription data-subscription="rss">
+      <li><a href="/feed" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+    </ul>
+    <script type="text/javascript">
+        var dispatch = function() {
+            q = document.getElementById("q");
+            if (q.value != "") {
+                window.open('http://www.google.com/search?q=site:chartnet.sinaapp.com/detailpost/%20' + q.value, "_blank");
+                return false;
+            } else {
+                return false;
+            }
+        }
+    </script>    
+    <form onsubmit="return dispatch()">
+      <fieldset role="site-search">
+        <input class="search" type="search" id="q" placeholder="Search" />
+      </fieldset>
+    </form>
+    <ul role=main-navigation>
+      <li><a href="/">Blog</a></li>
+      <li><a href="/timeline">Timeline</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/download">DownLoad</a></li>
+    </ul>
+  </nav>
+  <div id="main">
+    <div id="content">
+ {% block main %}{% endblock %}
+{% include 'sidebar.html' %}
+</div>
+</div>
+  <footer>
+    <p>
+    &copy; 2012 Copyright <a href="http://chartnet.sinaapp.com">c-house</a> - 
+    Powered by <a href="{{ BASE_URL }}" target="_blank">Countryside's house</a> -
+    Theme by <a href="http://www.octopress.org/" target="_blank">Octopress</a>, Improved by <a href="#" target="_blank">Hxy</a> -
+    Time: <span id="requesttime">53</span> ms -
+    <a href="/admin/login" rel="nofollow">Admin</a>
+    <a class="fr" target="_blank" href="http://sae.sina.com.cn"><img title="Powered by Sina App Engine" src="http://static.sae.sina.com.cn/image/poweredby/117X12px.gif"></a>
+    </p>
+    <a style="display: none; " rel="nofollow" href="#top" id="go-to-top">▲</a>
+  </footer>
+</body>
+</html>

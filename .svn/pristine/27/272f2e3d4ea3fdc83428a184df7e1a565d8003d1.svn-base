@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block main %}
+
+<!-- block content -->
+
+   <div>
+    <article class="hentry" role="article">
+        <header>
+            <h1 class="entry-title">{{obj._title}}</h1>
+            <p class="meta">
+                <small>Admin at {{add_time}} in {{obj._category}}
+                <a href="http://saepy.sinaapp.com/topic/47/about#comments" title="Comment on {{obj._title}}" class="count">{{obj._comment_num}}</a>
+                </small>
+            </p>
+
+        </header>
+
+        <div class="entry-content" id="postcondiv">{{obj._content|safe}}</div>
+        <footer>
+            
+            <div  style="display:block;margin-bottom:20px;">
+            <!-- JiaThis Button BEGIN -->
+            <!-- <div id="jiathis_style_32x32"><span class="jiathis_txt">分享到：</span> -->
+            <!-- <a class="jiathis_button_tsina"></a> -->
+            <!-- <a class="jiathis_button_ishare"></a> -->
+            <!-- <a class="jiathis_button_renren"></a> -->
+            <!-- <a class="jiathis_button_baidu"></a> -->
+            <!-- <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a> -->
+            <!-- </div> -->
+            <script type="text/javascript" >
+            var jiathis_config={
+            summary:"",
+            hideMore:false
+            }
+            </script>
+            <script type="text/javascript" src="http://v2.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+            <!-- JiaThis Button END -->
+            <div class="c"></div>
+            </div>            
+            
+            
+            <div class="topline greyhref grey">
+			{% if _newer %}
+            Newer &rsaquo; <a href="/detailpost/{{_newer._id}}" rel="prev">{{ _newer._title }}</a>
+			{% endif %}
+            <br/> 
+			{% if _older %}
+            Older &rsaquo; <a href="/detailpost/{{_older._id}}" rel="next">{{ _older._title }}</a> 
+			{% endif %}
+            </div>
+            
+        </footer>
+    </article>
+    <!-- duoshuo comment plugin -->
+    <!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"rebang"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+    <!-- Duoshuo Comment END -->
+</div>
+{% endblock %}

@@ -17,6 +17,7 @@ import logging
 import json
 import weixin
 
+
 #jinja filter
 from datetime import datetime
 
@@ -196,6 +197,7 @@ def detailpost(post_id):
         return render_template('detailpost_weixin.html',post_id=post_id,obj=_article,add_time=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(_article._add_time)))
     else:
 	   return render_template('detailpost.html',_older=_older,_newer=_newer,coms=operatorDB.get_comments_new(),tags = operatorDB.get_all_tag_name(),cats=operatorDB.get_all_cat_name(),links=operatorDB.get_all_links(),post_id=post_id,comLen=comLen,comments=comments,obj=_article,add_time=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(_article._add_time)))
+
 
 @app.route('/timeline')
 def _timeline():
@@ -403,7 +405,6 @@ def uploadFile():
     ret["thumbnailUrl"] = thumbnail_url
     file_url_json = json.dumps(ret)
     return file_url_json
-
 
 
 #公众号消息服务器网址接入验证

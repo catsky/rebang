@@ -1,0 +1,87 @@
+﻿{% extends "base.html" %}
+{% block main %}
+<!-- block content -->
+
+                    <div class="nav_links row-fluid ">
+                        <div class="span8">
+                            <div class="breadcrumb_div" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                              <ul class="breadcrumb menu clearfix"><li class="first"><a href="/">澳洲一刻</a><span class="divider">/</span></li><li class="last active"><a href=/tag/{{tag_name}} itemprop="url"><span itemprop="title">{{tag_name}}</span></a></li></ul>
+                            </div>
+                        </div>
+                        <div class="span4">
+                            <form action="/search/" method="get" class="form form-search">
+                            <div class="row-fluid hidden-phone">
+                                <div class="input-append ">
+                                    <button class="btn btn-primary span2 pull-right" style="width:18%"><i class="icon-search"></i> </button>
+                                    <input type="text" name="q" id="avnpc-form-searchform-q" class="search-query span10  validate[required]" placeholder="搜索" value="">        
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                      </div>
+                    <div class="pull-right sep10 span4">
+                    </div>
+                    <!--picture and details topic list -->
+                    <div class="row-fluid">
+                        <div class="span8 krContent">
+                            <!--picture topic list -->
+                            {% for topic in posts %}
+                            <div class="row-fluid blogPost breaking">
+                                <div class="left_info pull-left hidden-phone span4">
+                                    <div class="feature_img row-fluid">
+                                        <a href="/detailpost/{{topic._id}}" data-no-turbolink="true" 
+                                            target="_blank" title="{{topic._title}}">
+                                        <img height="200" src={{topic._imgthumbnail}}
+                                            width="320">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="right_info span8 pull-right magb30 sep-5">
+                                    <div class="summary">
+                                        <h4>
+                                            <a href="/detailpost/{{topic._id}}" data-no-turbolink="true" 
+                                            target="_blank" title="{{topic._title}}">
+                                                {{topic._title}}
+                                            </a>
+                                        </h4>
+                                        <div class="post_meta sep5 muted">
+                                            <small style="color:#999">Catgory: {{topic._category}}</small>
+                                            <small style="color:#999">Tags: <a href="{{BASE_URL}}tag/主库/" rel="tag">{{topic._tags}}</a></small>
+                                            •
+                                            <abbr class="timeago" title="2013-07-01T20:56:23+08:00">
+                                                19分钟前
+                                            </abbr>
+                                            •
+                                            <!-- comment number -->
+                                            <small> <a href="/detailpost/{{topic._id}}" title="Comment on {{topic._title}}" class="count">{{topic._comment_num}}条评论</a></small>
+                                        </div>
+                                        <div class="excerpt sep-5">
+                                            <p>
+                                                {{topic._shorten_content}}......
+                                            </p>
+                                            <div class="post_meta sep-10 muted">
+                                                <a class="pull-right sep-5">
+                                                </a>
+                                                <a title="点击阅读全文" class="pull-right" rel="full-article" href="/detailpost/{{topic._id}}">继续阅读</a>
+                                                <i class="icon-double-angle-right">
+                                                    </i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             {% endfor %}
+                            <!--details news list -->
+                            <div class="span9" id="news_list">
+                            </div>   
+                              </div>
+                        <div class="span4 krSide">
+                            <div class="cnt magb10">
+                            </div>
+                            <iframe width="100%" height="550" class="share_self" frameborder="0" scrolling="no"
+                            src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2612034061&verifier=1b23f5ad&dpc=1">
+                            </iframe>
+                        </div>
+                    </div>
+                 
+ {% endblock %}          

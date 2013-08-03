@@ -1,0 +1,123 @@
+<div class="title">
+    <div class="float-left">
+        <a href="/">#{{SITE_TITLE}}</a> &raquo; <a href="/n-#{t_obj.node.id}">#{t_obj.node.name}</a> &raquo; #{title}
+    </div>
+    <?py if cur_user and cur_user.flag>1: ?>
+    <div class="float-right"><a href="/newpost/#{t_obj.node.id}" rel="nofollow">+发新帖</a></div>
+    <?py #endif ?>
+    <div class="c"></div>    
+</div>
+<div class="main-box">
+    <div class="topic-title">
+        <div class="topic-title-main float-left">
+            <h1>#{t_obj.title}</h1>
+            <div class="topic-title-date">
+            By <a href="/member/#{t_obj.author}">#{t_obj.author}</a> at #{date_web(t_obj.add)}
+            <?py if cur_user and cur_user.flag>1: ?>
+            <a href="#new-comment">回复</a>
+            <?py #endif ?>
+            </div>
+        </div>
+        <div class="detail-avatar"><a href="/member/#{t_obj.author}">
+        <?py if request.is_spider: ?>
+        <img src="#{{AVATAR_URL}}#{t_obj.author}.jpg" alt="#{t_obj.author}" />
+        <?py else: ?>
+        <img src="/static/grey.gif" data-original="#{{AVATAR_URL}}#{t_obj.author}.jpg" alt="#{t_obj.author}" />
+        <?py #endif ?>
+        </a></div>
+        <div class="c"></div>
+    </div>
+    <div class="topic-content">
+    <p>#{nl2br(content_formate(t_obj.con, request.is_spider))}</p>
+    </div>
+
+</div>
+<!-- post main content end -->
+
+<?py if t_obj.cnum: ?>
+<div class="title">
+    #{t_obj.cnum} 回复  |  直到 #{date_web(t_obj.edit)}
+</div>
+<div class="main-box">
+    
+    <?py count_n = from_id ?>
+    <?py for c_obj in c_objs: ?>
+    <div class="commont-item">
+        <div class="commont-avatar"><a href="/member/#{c_obj.author}">
+        <?py if request.is_spider: ?>
+        <img src="#{{AVATAR_URL}}#{c_obj.author}.jpg!normal" alt="#{c_obj.author}" />
+        <?py else: ?>
+        <img src="/static/grey.gif" data-original="#{{AVATAR_URL}}#{c_obj.author}.jpg!normal" alt="#{c_obj.author}" />
+        <?py #endif ?>
+        </a></div>
+        <div class="commont-data">
+            <div class="commont-data-date">
+                <div class="float-left"><a href="/member/#{c_obj.author}">#{c_obj.author}</a> at #{date_web(c_obj.add)}</div>
+                <div class="float-right">
+                <?py if cur_user and cur_user.flag>1 and cur_user.name != c_obj.author: ?>
+                <a href="#new-comment" onclick="replyto('#{c_obj.author}');">回复</a> 
+                <?py #endif ?>
+                <span class="commonet-count">#{count_n}</span></div>
+                <div class="c"></div>
+            </div>
+            <div class="commont-content">
+            <p>#{nl2br(content_formate(c_obj.con, request.is_spider))}</p>
+            </div>
+            <div class="c"></div>
+        </div>
+        <div class="c"></div>
+    </div>
+    <?py     count_n += 1 ?>
+    <?py #endfor ?>
+    
+    <?py if t_obj.cnum > EACH_PAGE_COMMENT_NUM: ?>
+    <div class="pagination">
+    <?py     if from_id>EACH_PAGE_COMMENT_NUM: ?>
+    <a href="?id=#{from_id-EACH_PAGE_COMMENT_NUM}" class="float-left">&laquo; 上一页</a>
+    <?py     #endif ?>
+    <?py     if to_id<t_obj.cnum: ?>
+    <a href="?id=#{to_id+1}" class="float-right">下一页 &raquo;</a>
+    <?py     #endif ?>
+    <div class="c"></div>
+    </div>
+    <?py #endif ?>    
+    
+</div>
+<!-- comment list end -->
+
+<script type="text/javascript">
+function replyto(somebd){
+    var con = document.getElementById("id-content").value;
+    document.getElementsByTagName('textarea')[0].focus();
+    document.getElementById("id-content").value = " @"+somebd+" " + con;
+}
+
+</script>
+
+<?py else: ?>
+
+<div class="no-comment">目前尚无回复</div>
+
+<?py #endif ?>
+
+<?py if cur_user and cur_user.flag>1: ?>
+<a name="new-comment"></a>
+<div class="title">
+    <div class="float-left">添加一条新回复</div>
+    <div class="float-right"><a href="#">↑ 回到顶部</a></div>
+    <div class="c"></div>    
+</div>
+<div class="main-box">
+    <form action="" method="post">
+    <p><textarea id="id-content" name="content" class="comment-text"></textarea></p>
+    <?py include("uploads_photo.html") ?>
+    <div class="c"></div>
+    <p>
+    <div class="float-left"><input type="submit" value=" 提 交 " name="submit" class="textbtn" /></div>
+    <div class="float-right fs12 grey">请尽量让自己的回复能够对别人有帮助</div>
+    <div class="c"></div> 
+    </p>
+    </form>
+</div>
+<?py #endif ?>
+<!-- new comment end -->

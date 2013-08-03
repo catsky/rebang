@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% block main %}
+
+<!-- block content -->
+
+   <div>
+    <article class="hentry" role="article">
+        <header>
+            <h1 class="entry-title">About</h1>
+        </header>
+
+        <div class="entry-content" id="postcondiv"><p><h3>我是谁？</h3>某人的老公，孩子的父亲，IT从业者。</p>
+<p><h3>干啥的？</h3>主要从事MIS系统的需求分析、系统设计、软件开发及项目管理。</p>
+<p><h3>以前呢？</h3>1998年接触了局域网（网吧），2000年开始拨号上网及qq聊天（201卡拨号），2001年对程序产生了兴趣（某种程序语言的狂热者），2002年开始到处奔波（找工作），2003年选择在某个城市稳定下来，从此开始从事于IT行业。</p>
+<p><h3>现在呢？</h3>供职于某家企事业单位，主要工作以需求调研、系统设计、软件开发、项目管理、教育孩子为主 (持续更新中&#8230;.)</p>
+<p><h3>将来呢？</h3>将来唯一能明确的就是教育孩子，其他的事情谁又知道呢。</p></div>
+        <footer>
+            <p class="meta grey">
+                <span>Posted by <strong>javalurker</strong></span> |
+
+                <span class="categories greyhref">
+                    position:
+                    <a href="/about" rel="category tag">about</a>
+                </span>
+            </p>
+            
+            <div  style="display:block;margin-bottom:20px;">
+            <!-- JiaThis Button BEGIN -->
+            <div id="jiathis_style_32x32"><span class="jiathis_txt">分享到：</span>
+            <a class="jiathis_button_tsina"></a>
+            <a class="jiathis_button_ishare"></a>
+            <a class="jiathis_button_renren"></a>
+            <a class="jiathis_button_baidu"></a>
+            <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+            </div>
+            <script type="text/javascript" >
+            var jiathis_config={
+            summary:"",
+            hideMore:false
+            }
+            </script>
+            <script type="text/javascript" src="http://v2.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+            <!-- JiaThis Button END -->
+            <div class="c"></div>
+            </div>        
+        </footer>
+    </article>
+    
+    <a name="comments"></a>
+    <section>
+        <h1 class="topline">Comments</h1>
+        <div id="comments">
+            <h2 class="comments">There are {{ aboutReplysLen }} Comments to "about"</h2>
+            <ul class="singlecomments" id="commentlist">
+            
+<a name="r233"></a>
+{% for aboutReply in aboutReplys %}
+<li id="comment-233"> 
+    <div> 
+        <div> 
+        <img alt='' src="http://www.gravatar.com/avatar/2096cfb89f3dd725f4bee7e5353d62a0?s=48&d=monsterid" class='avatar' height='48' width='48' />
+        <div class="fl">
+        {{ aboutReply.author }}
+        <span class="grey">says:</span>  <br/><em class="grey"><a href="http://saepy.sinaapp.com/t/47#r233">{{ aboutReply.reply_date }}</a></em>
+        </div>
+        <div class="fr"> <span class="comment-rating" style="margin-left:2px;"> <img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="up-154603" src="/static/img/1_14_up.png" alt="Thumb up" onclick="window.document.location.href='/soGoodorBad?id={{ aboutReply.id }}&action=so_good'" title="认同" /> <span id="karma-154603-up" style="font-size:12px; color:#009933;">{{ aboutReply.so_good }}</span>&nbsp;<img style="padding: 0px; border: none; cursor: pointer;" onmouseover="this.width=this.width*1.3" onmouseout="this.width=this.width/1.2" id="down-154603" src="/static/img/1_14_down.png" alt="Thumb down" onclick="window.document.location.href='/soGoodorBad?id={{ aboutReply.id }}&action=so_bad'" title="反对" /> <span id="karma-154603-down" style="font-size:12px; color:#990033;">{{ aboutReply.so_bad }}</span>  <a href="#respond" onclick="reply('233','guest')">Reply</a></div>
+        <div class="c"></div>
+        </div> 
+        <em>{{ aboutReply.comment }}</em>
+         
+    </div>
+</li> 
+{% endfor %}
+            </ul>
+        </div>
+    </section>
+   
+    <!-- new comment -->
+    <section>
+    <div id="respond" class="topline">
+    
+<h2 class="respond">Write a Comment</h2>
+<form action="/about" method="post" id="commentform">
+    <p>
+    <input type="text" id="author" name="author" placeholder="First and last name" required tabindex="1" /> 
+    <label for="name">* Name (required)</label> 
+    </p>
+    <p> 
+    <input type="text" id="email" name="email" placeholder="example@domain.com" required tabindex="2" /> 
+    <label for="email">* Email (required, not published)</label>
+    </p>
+    <p> 
+    <input type="text" id="url" name="url" placeholder="http://www.yourdomain.com" tabindex="3" /> 
+    <label for="email">Website (Optional)</label>
+    </p>
+    <p><label for="comment">* Your Message (required) 10~500s</label> </p>
+    <textarea name="comment" id="commentbox" tabindex="4"></textarea> 
+    <p>
+    <input name="submit1" class="submit" type="button" id="submit1" tabindex="5" value="Submit Comment" /> 
+    </p>
+    
+    <input type='hidden' value='47' id='postkeyname' /> 
+    <input type='hidden' value='' id='toid' />
+    <p id="text"></p>
+
+</form>
+    </div>
+    </section>
+
+</div>
+<script src="/static/jquery-plugin/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+<script>
+function testReg(reg,str){
+    return reg.test(str);
+}
+
+$('#submit1').click(function(){
+    var emailreg = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/g;
+    var urlreg = /^http:\/\/.+\..+/;
+    var email = $('#email').val();
+    var url = $('#url').val();
+    var con = $('#commentbox').val();
+    var author = $('#author').val();
+    
+    if(author.length< 1 || author.length > 30){
+        $('#author').focus();
+        return;
+    }
+        
+    if(!testReg(emailreg,email)){
+        $('#email').focus();
+        return;
+    }
+    if(url.length>0){
+        if(!testReg(urlreg,url)){
+            $('#url').focus();
+            return;
+        }
+    }
+    if(con.length< 10 || con.length > 500){
+        $('#commentbox').focus();
+        return;
+    }
+        
+    $('#submit1').attr('disabled', 'disabled');
+    $('#text').html("Sending now.....");
+    
+    $.cookie('author', author, { expires: 365, path: '/' });
+    $.cookie('email', email, { expires: 365, path: '/' });
+    $.cookie('url', url, { expires: 365, path: '/' });
+	$('#commentform').submit();    
+});
+
+function reply(toid, name){
+    var ct = $('#commentbox');
+    ct.focus();
+    ct.val('@'+name + ' ' + ct.val());
+    $('#toid').val(toid);
+    return false;
+}
+</script>
+
+{% endblock %}

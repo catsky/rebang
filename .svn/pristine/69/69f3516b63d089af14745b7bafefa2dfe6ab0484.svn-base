@@ -1,0 +1,21 @@
+<div class="title"><a href="/">#{{SITE_TITLE}}</a> &raquo; #{title}</div>
+<div class="main-box">
+
+<?py if m_obj: ?>
+<form action="" method="post">
+<p>用户 <strong>#{m_obj.name}</strong> 当前flag值 <strong>#{m_obj.flag}</strong></p>
+
+<p><label>给用户 <strong>#{m_obj.name}</strong> 设定新的flag值 <input type="text" name="flag" value="${m_obj.flag}" /></label> （可选值0/2/99）<br/>0（不让该用户发帖、回复）<br/>2（正常值，可发帖可回复）<br/>99（管理员） 默认第一个用户为管理员，切忌改变唯一管理员的flag值！</p>
+<p><input type="submit" value=" 提 交 " name="submit" class="textbtn" /></p>
+</form>
+<p>Edit ?name=name</p>
+<p>用户权限与flag值说明：注册后默认1，上传头像后2，被禁用0，最高管理员99</p>
+<?py else: ?>
+<form action="" method="post">
+输入用户名：
+<input type="text" name="name" value="" />
+<input type="submit" value=" 提 交 " name="submit" class="textbtn" />
+</form>
+<?py #endif ?>
+
+</div>

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block main %}
+
+				<div class="nav_links row-fluid ">
+                        <!--head nav -->  
+                        <div class="span8">
+                            <div class="subnav">
+                                <ul class="nav nav-pills" data-step="3" data-intro="点击查看分类">
+                                    {% for cat in cats %}
+                                    <li>
+                                        <a
+                                        href="/category/{{ cat.name }}">
+                                            {{ cat.name }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                       <!--search box -->  
+                       <div class="span4">
+                            <form action="/search/" method="get" class="form form-search">
+                                <div class="row-fluid hidden-phone">
+                                    <div class="input-append ">
+                                        <button class="btn btn-primary span2 pull-right" style="width:18%">
+                                            <i class="icon-search">
+                                            </i>
+                                        </button>
+                                        <input type="text" name="q" id="avnpc-form-searchform-q" class="search-query span10  validate[required]"
+                                        placeholder="搜索" value="">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--picture and details topic list -->
+                    <div class="row-fluid">
+                        <div class="span8 krContent">
+							 <div>
+								<article class="hentry" role="article">
+										<h4 class="entry-title">{{obj._title}}</h4>
+										<p class="meta">
+											<small>小编 at {{add_time}} in <a href="/category/{{obj._category}}">{{obj._category}}</a> | 
+											<a href="" title="Comment on {{obj._title}}" class="count">{{obj._comment_num}}</a>条评论
+											</small>
+										</p>	
+
+									<div class="entry-content" id="postcondiv">{{obj._content|safe}}</div>
+									<footer> 	         
+										
+										
+										<div class="topline greyhref grey">
+										{% if _newer %}
+										Newer &rsaquo; <a href="/detailpost/{{_newer._id}}" rel="prev">{{ _newer._title }}</a>
+										{% endif %}
+										<br/> 
+										{% if _older %}
+										Older &rsaquo; <a href="/detailpost/{{_older._id}}" rel="next">{{ _older._title }}</a> 
+										{% endif %}
+										</div>
+										
+									</footer>
+								</article>
+								<!-- Duoshuo Comment BEGIN --> 
+									<div class="ds-thread" data-category="{{obj._category}}" data-thread-key="{{obj._id}}"
+									data-title="{{obj._title}}" data-author-key="" data-url=""></div>
+								<script type="text/javascript">
+								var duoshuoQuery = {short_name:"rebang"};
+									(function() {
+										var ds = document.createElement('script');
+										ds.type = 'text/javascript';ds.async = true;
+										ds.src = 'http://static.duoshuo.com/embed.js';
+										ds.charset = 'UTF-8';
+										(document.getElementsByTagName('head')[0] 
+										|| document.getElementsByTagName('body')[0]).appendChild(ds);
+									})();
+									</script>
+								<!-- Duoshuo Comment END -->
+							</div>
+                        </div>
+                        <div class="span4 krSide">
+                            <div class="cnt magb10">
+                            </div>
+                            <iframe width="100%" height="800" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=800&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2612034061&verifier=1b23f5ad&dpc=1"></iframe>
+                        </div>
+                    </div>
+
+
+{% endblock %}
+
+   

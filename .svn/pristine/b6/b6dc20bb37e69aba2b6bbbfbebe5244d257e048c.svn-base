@@ -1,0 +1,192 @@
+﻿{% extends "base.html" %}
+{% block title %}
+澳洲一刻 | 澳洲移民趣多多 | 最新的澳洲移民生活播报
+{% endblock %}
+
+
+{% block main %}
+<!-- block content -->
+
+    
+
+
+                    <div class="nav_links row-fluid ">
+                        <!--head nav -->  
+                        <div class="span8">
+                            <div class="subnav">
+                                <ul class="nav nav-pills" data-step="3" data-intro="点击查看分类">
+                                    {% for cat in cats %}
+                                    <li>
+                                        <a
+                                        href="/category/{{ cat.name }}">
+                                            {{ cat.name }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                       <!--search box -->  
+                       <div class="span4">
+                            <!-- <form action="/search/" method="get" class="form form-search">
+                                <div class="row-fluid hidden-phone">
+                                    <div class="input-append ">
+                                        <button class="btn btn-primary span2 pull-right" style="width:18%">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+                                        <input type="text" name="q" id="avnpc-form-searchform-q" class="search-query span10  validate[required]"
+                                        placeholder="搜索" value="">
+                                    </div>
+                                </div>
+                            </form> -->
+							<script>
+							  (function() {
+								var cx = '008710774622108636416:o9goczgz66c';
+								var gcse = document.createElement('script');
+								gcse.type = 'text/javascript';
+								gcse.async = true;
+								gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+									'//www.google.com/cse/cse.js?cx=' + cx;
+								var s = document.getElementsByTagName('script')[0];
+								s.parentNode.insertBefore(gcse, s);
+							  })();
+							</script>
+							<gcse:searchbox-only></gcse:searchbox-only>
+                        </div>
+                    </div>
+                    <div class="pull-right sep10 span4">
+						<div class="cnt sep5">
+							<a rel="twipsy" target="_blank" href="/contact-us" class="pull-right">【联系我们】</a>
+							<div class="WB_widget WB_follow_ex"  style="width: 136px; height: 24px; overflow: hidden;">
+							<a target="_blank"  href="/about">【关于我们】</a>
+							</div>
+						</div>
+                    </div>
+                    <h2 class="sep5">
+                        编辑推荐
+                    </h2>
+                    <!--hot picture topic box --> 
+                    <div class="row-fluid">
+                        <div class="span8">
+                            <div class="row-fluid feature_topics">
+                            {% for topic in editor_posts %}
+                                <div class="view_204291 span4 feature_img">
+                                    <a href="/detailpost/{{topic._id}}" data-no-turbolink="true" 
+                                            target="_blank" title="{{topic._title}}">
+                                        <img height="200" src={{topic._imgthumbnail}}
+                                            width="320">
+                                    </a>
+                                    <div class="sep10">
+                                        <h4>
+                                            <a href="/detailpost/{{topic._id}}" data-no-turbolink="true" 
+                                            target="_blank" title="{{topic._editor_title}}">
+                                                {{topic._editor_title}}
+                                            </a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                            <h2 class="sep10">
+                                最新文章
+                            </h2>
+                        </div>
+                        <div class="span4 krSide">
+                            <div class="cnt magb10">
+                            </div>
+                            <div class="recent_nodes nodes clearfix tags">
+                                <h6 class="sidebar_title btn-block">
+                                    热门话题
+                                </h6>
+                                <ul class="unstyled">
+                                {% for tag in tags %}
+                                    <li>
+                                        <a href="/tag/{{ tag.name}}" title="{{ tag.name }}">
+                                            {{ tag.name }}
+                                        </a>
+                                    </li>
+                                 {% endfor %}
+                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--picture and details topic list -->
+                    <div class="row-fluid">
+                        <div class="span8 krContent">
+                            <!--picture topic list -->
+                            {% for topic in posts.items %}
+                            <div class="row-fluid blogPost breaking">
+                                <div class="left_info pull-left hidden-phone span4">
+                                    <div class="feature_img row-fluid">
+                                        <a href="/detailpost/{{topic._id}}" data-no-turbolink="true" 
+                                            target="_blank" title="{{topic._title}}">
+                                        <img height="200" src={{topic._imgthumbnail}}
+                                            width="320">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="right_info span8 pull-right magb30 sep-5">
+                                    <div class="summary">
+                                        <h4>
+                                            <a href="/detailpost/{{topic._id}}" data-no-turbolink="true" 
+                                            target="_blank" title="{{topic._title}}">
+                                                {{topic._title}}
+                                            </a>
+                                        </h4>
+                                        <div class="post_meta sep5 muted">
+                                            <small style="color:#999">Catgory:
+                                            <a href="{{BASE_URL}}category/{{topic._category}}" rel="tag">{{topic._category}}</a>
+                                            </small>
+                                            <small style="color:#999">Tags: 
+											{% for tag in topic._tags %}
+													<a href="/tag/{{ tag.name}}" title="{{ tag.name }}" rel="tag">
+														{{ tag.name }}
+													</a>
+											 {% endfor %}
+											
+											</small>
+                                            •
+                                            <abbr class="timeago" title="2013-07-01T20:56:23+08:00">
+                                                {{topic._add_time|timesince}}
+                                            </abbr>
+                                            •
+											<small>已阅读{{topic._click_num}}次</small>
+											•
+                                            <!-- comment number -->
+                                            <small> <a href="/detailpost/{{topic._id}}" title="Comment on {{topic._title}}" class="count">{{topic._comment_num}}条评论</a></small>
+                                        </div>
+                                        <div class="excerpt sep-5">
+                                            <p>
+                                                {{topic._shorten_content}}......
+                                            </p>
+                                            <div class="post_meta sep-10 muted">
+                                                <a class="pull-right sep-5">
+                                                </a>
+                                                <a title="点击阅读全文" class="pull-right" rel="full-article" href="/detailpost/{{topic._id}}">继续阅读</a>
+                                                <i class="icon-double-angle-right">
+                                                    </i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             {% endfor %}
+                        {% if posts.has_prev %}<a href="{{ url_for('_index', page = posts.prev_num) }}"><< 上一页</a>{% else %}<< 上一页{% endif %} |
+{% if posts.has_next %}<a href="{{ url_for('_index', page = posts.next_num) }}">下一页 >></a>{% else %}下一页>>{% endif %}
+
+                            <!--details news list -->
+                            <div class="span9" id="news_list">
+                            </div>   
+                        </div>
+                        <div class="span4 krSide">
+                            <div class="cnt magb10">
+                            </div>
+                            <iframe width="100%" height="550" class="share_self" frameborder="0" scrolling="no"
+                            src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2612034061&verifier=1b23f5ad&dpc=1">
+                            </iframe>
+                        </div>
+                    </div>
+
+
+               
+{% endblock %}

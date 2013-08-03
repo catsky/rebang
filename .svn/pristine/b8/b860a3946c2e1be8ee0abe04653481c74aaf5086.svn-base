@@ -1,0 +1,26 @@
+<div class="grey fs12">
+上传图片 <input id="filetoupload" type="file" name="filetoupload" style="width:200px;">
+<input type="hidden" value="" id="id_imgurl">
+<span id="upload-prompt" style="display:none;color:red">图片上传中，请稍候！</span>
+</div>
+
+<!-- ajaxfileupload -->
+<script type="text/javascript" src="/static/js/jquery.upload-1.0.2.min.js"></script>
+
+<script type="text/javascript">
+$('#filetoupload').change(function() {
+    $("#upload-prompt").text("图片上传中，请稍候！");
+    $("#upload-prompt").show();
+    if($(this).val()){
+        $(this).upload("/uploadphotonode?id=#{n_obj.key().id()}", function(res) {
+            if(res.status == 200){
+                $("#upload-prompt").text(res.msg);
+                document.getElementById("imgurl").value = res.url;
+            }else{
+                alert(res.msg);
+            }
+        }, 'json');
+    }
+});
+</script>
+<!-- /ajaxfileupload -->

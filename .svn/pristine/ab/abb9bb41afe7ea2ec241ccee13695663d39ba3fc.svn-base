@@ -1,0 +1,44 @@
+<div class="title">
+    <div class="float-left">
+        <a href="/">#{{SITE_TITLE}}</a> &raquo; #{title} (#{n_obj['count']})
+    </div>
+    <?py if cur_user and int(cur_user['flag'])>1: ?>
+    <div class="float-right"><a href="/newpost/#{n_obj['id']}" rel="nofollow">+发新帖</a></div>
+    <?py #endif ?>
+    <div class="c"></div>
+</div>
+
+<div class="main-box">
+
+<div class="node-detail">
+<?py if n_obj['imgurl']: ?>
+<div class="node-img">
+<?py if is_spider: ?>
+<img src="#{n_obj['imgurl']}" alt="${n_obj['name']}" />
+<?py else: ?>
+<img src="/static/grey.gif" data-original="#{n_obj['imgurl']}" alt="${n_obj['name']}" />
+<?py #endif ?>
+</div>
+<?py #endif ?>
+<div class="node-data">
+<p>#{n_obj['about']}</p>
+</div>
+<div class="c"></div>
+</div>
+
+<?py include("topic-items.html") ?>
+
+<?py if n_obj['count'] and int(n_obj['count'])>EACH_PAGE_POST_NUM: ?>
+<div class="pagination">
+<?py     if from_id<int(n_obj['count']): ?>
+<a href="?id=#{from_id+EACH_PAGE_POST_NUM}" class="float-left">&laquo; 上一页</a>
+<?py     #endif ?>
+<?py     if to_id>0: ?>
+<a href="?id=#{to_id}" class="float-right">下一页 &raquo;</a>
+<?py     #endif ?>
+<div class="c"></div>
+</div>
+<?py #endif ?>
+
+</div>
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>#{title} - #{{SITE_TITLE}}</title>
+<link href="/static/default/style.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link href="/feed" rel="alternate" title="${{SITE_TITLE}} - ATOM Feed" type="application/atom+xml"/>
+<meta property="qc:admins" content="33114665133741631611006375" />
+<?py if is_spider: ?>
+<?py     if 'description' in _context: ?>
+<meta name="description" content="${'%s - %s - %s' % (t_obj['nodename'], t_obj['author'], t_obj['content'][:DESCRIPTION_CUT_WORDS])}" />
+<?py     #endif ?>
+<?py else: ?>
+<script src="#{{JQUERY}}" type="text/javascript"></script>
+<?py #endif ?>
+<link rel="top" title="Back to Top" href="#" />
+</head>
+<body>
+<div class="header-wrap">
+    <div class="header">
+        <div class="logo"><a href="/" name="top"><img src="/static/images/logo.gif" alt="#{{SITE_TITLE}}" /></a></div>
+        <div class="scbox">
+        <form role="search" method="get" id="searchform" action="http://www.google.com/search" target="_blank">
+            <input type="hidden" name="q" value="site:#{{MAJOR_DOMAIN}}">
+        	<input type="text" value="" name="q" id="s">
+        </form>
+        </div>
+        <div class="banner">
+        <?py if cur_user: ?>
+        <?py     if int(cur_user['flag']) >1: ?>
+        <?py         if cur_user.get('notic',''): ?>
+        <a href="/notifications" style="color:yellow;">(#{len(cur_user['notic'].split(','))}条提醒)</a> &nbsp;&nbsp; 
+        <?py         #endif ?>
+        <a href="/setavatar"><img src="#{{AVATAR_URL}}#{cur_user['name']}.jpg#{{AVATAR_MINI}}" alt="#{cur_user['name']}" class="avatar-mini"/></a>
+        <?py     else: ?>
+        <?py         if int(cur_user['flag']) ==0: ?>
+        <span style="color:yellow;">该用户已被禁用</span> |
+        <?py         else: ?>
+        <a href="/setavatar" style="color:yellow;">请先设置头像</a> |
+        <?py         #endif ?>
+        <?py     #endif ?>
+        <a href="/member/#{cur_user['name']}">#{cur_user['name']}</a> | <a href="/logout">退出</a>
+        <?py else: ?>
+        <?py     if IS_SAE: ?>
+        
+        <?py         if USER_MODEL in [1,3]: ?>
+        <a href="#{{qq_login_url}}" rel="nofollow"><img src="/static/default/img/Connect_logo_3.png" alt="用QQ安全登录#{{SITE_TITLE}}"/></a> 
+        <?py         #endif ?>
+        <?py         if USER_MODEL in [2,3]: ?>
+        <a href="/login">登录</a> | <a href="/sigin">注册</a> 
+        <?py         #endif ?>
+        
+        <?py     else: ?>
+        <a href="/login">登录</a> | <a href="/sigin">注册</a>
+        <?py     #endif ?>
+        <?py #endif ?>
+        </div>
+        <div class="c"></div>
+    </div>
+    <!-- header end -->
+</div>
+
+<div class="main-wrap">
+    <div class="main">
+        <div class="main-content">
+        
+        #{_content}
+        
+        </div>
+        <!-- main-content end -->
+        <div class="main-sider">
+            <?py include("sider.html") ?>
+        </div>
+        <!-- main-sider end -->
+        <div class="c"></div>
+    </div>
+    <!-- main end -->
+    <div class="c"></div>
+</div>
+
+<div class="footer-wrap">
+    <div class="footer">
+    <p>&copy; Copyright <a href="#{{BASE_URL}}">#{{SITE_TITLE}}</a></p>
+    <p>Powered by <a href="http://www.saespot.com" target="_blank">SAEspot</a></p>
+    </div>
+    <!-- footer end -->
+</div>
+
+<?py if not is_spider: ?>
+<script src="/static/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+    $(".main-box img").lazyload({
+        //placeholder : "/static/grey.gif",
+        effect : "fadeIn"
+    });
+});
+</script>
+
+<?py #endif ?>
+
+</body>
+</html>

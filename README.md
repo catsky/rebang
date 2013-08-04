@@ -12,7 +12,7 @@ A tiny and beautiful blog system using Flask, SQLAlchemy,
 
 
 ## Is there a live Demo?
-Yes. Here is the link: [http://rebang.sinaapp.com](http://rebang.sinaapp.com)
+Yes. Here is the link: [http://australian.sinaapp.com](http://australian.sinaapp.com)
 
 ## Vision
 

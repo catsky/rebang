@@ -9,6 +9,8 @@ import time
 import xml.etree.ElementTree as ET
 from models import operatorDB
 
+FILTER_WORD_LIST=[u"大纪元",]
+
 #接入和消息推送都需要做校验
 def verification(request):
     signature = request.args.get('signature')
@@ -36,6 +38,9 @@ def parse_msg(rawmsgstr):
 def is_text_msg(msg):
     return msg['MsgType'] == 'text'
 
+def is_location_msg(msg):
+    return msg['MsgType'] == 'location'
+
 def user_subscribe_event(msg):
     return msg['MsgType'] == 'event' and msg['Event'] == 'subscribe'
 
@@ -43,8 +48,8 @@ HELP_INFO = \
 u"""
 欢迎关注澳洲一刻^_^
 
-每天为你奉上最新鲜的澳洲生活资讯，最前沿的移民信息。
-
+我们为您奉上最新鲜的澳洲生活资讯，最前沿的移民信息。
+❤回复'n'或者'new' 获取最新澳洲资讯
 """
 
 def help_info(msg):
@@ -61,17 +66,17 @@ u"""
 <FromUserName><![CDATA[%s]]></FromUserName>
 <CreateTime>%s</CreateTime>
 <MsgType><![CDATA[news]]></MsgType>
-<Content><![CDATA[]]></Content>
 <ArticleCount>%d</ArticleCount>
 <Articles>
 """
+#<Content><![CDATA[]]></Content>
 
 NEWS_MSG_TAIL = \
 u"""
 </Articles>
-<FuncFlag>1</FuncFlag>
 </xml>
 """
+#<FuncFlag>1</FuncFlag>
 
 #消息回复，采用news图文消息格式
 def response_news_msg(recvmsg, posts):
@@ -103,27 +108,42 @@ u"""
     <PicUrl><![CDATA[%s]]></PicUrl>
     <Url><![CDATA[%s]]></Url>
 </item>
-"""
-
+ """
+ 
 def make_item(message, itemindex):
-    title =  u'%s' % message._title
-    description = u'%s' % message._shorten_content[:30]
+    #filter the sensitive words
+    title_r = message._title
+    description_r = message._shorten_content
+    for word in FILTER_WORD_LIST:
+        title_r = title_r.replace(word, '*')
+        description_r =description_r.replace(word, '*')
+        
+        
+    title =  u'%s' % title_r
+    description = u'%s' % description_r
     picUrl = message._imgthumbnail
-    
     url = 'http://australian.sinaapp.com/detailpost/%s?weixin=1' % message._id
     item = NEWS_MSG_ITEM_TPL % (title, description, picUrl, url)
+    #item = NEWS_MSG_ITEM_TPL
     return item
 
 #图文格式消息只有单独一条时，可以显示更多的description信息，所以单独处理
 def make_single_item(message):
-    title =  u'%s' % message._title
-    msg_discription = message._shorten_content
-    if len(msg_discription) > 75:
-        msg_discription = msg_discription[:70] + "..."
+    #filter the sensitive words
+    title_r = message._title
+    description_r = message._shorten_content
+    for word in FILTER_WORD_LIST:
+        title_r = title_r.replace(word, '*')
+        description_r = description_r.replace(word, '*')
+        
+    title =  u'%s' % title_r
+    if len(description_r) > 75:
+        msg_discription = description_r[:70] + "..."
     description ='%s' % msg_discription
     picUrl = message._imgthumbnail
     url = 'http://australian.sinaapp.com/detailpost/%s?weixin=1' % message._id
     item = NEWS_MSG_ITEM_TPL % (title, description, picUrl, url)
+    #item = NEWS_MSG_ITEM_TPL
     return item
 
 TEXT_MSG_TPL = \

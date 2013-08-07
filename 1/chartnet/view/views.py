@@ -174,7 +174,6 @@ def tag(tag_name):
     _end = _start + setting.EACH_PAGE_POST_NUM
     posts = operatorDB.get_post_page_tags(
                             tag_name)
-    logging.error(">>post %s"% len(posts))
     return render_template('tag.html',
                            tags = operatorDB.get_all_tag_name(),
                            posts = posts,
@@ -419,7 +418,9 @@ def weixin_access_verify():
 #来自微信服务器的消息推送
 @app.route('/weixin', methods=['POST'])
 def weixin_msg():
+    logging.error("1.weixin: in weixin_msg ")
     if weixin.verification(request):
+        logging.error("2.weixin verify done")
         data = request.data
         msg = weixin.parse_msg(data)
         if weixin.user_subscribe_event(msg):
@@ -428,11 +429,18 @@ def weixin_msg():
             content = msg['Content']
             if content == u'?' or content == u'？':
                 return weixin.help_info(msg)
-            else:
+            elif (content == u'n' or content == u'N' 
+                 or content == u'new' or content == u'NEW'
+                 or content == u'New'):
                 posts = operatorDB.get_weixin_articles()
                 rmsg = weixin.response_news_msg(msg, posts)
-                logging.info(rmsg)
+                logging.error("3.weixin get rmsg: %s"%rmsg)
                 return rmsg
+            else:
+                return weixin.help_info(msg)
+        elif weixin.is_location_msg(msg):
+            Label = msg['Label'] 
+            return weixin.help_info(msg)
     return 'message processing fail'
 
 def shorten_content(htmlstr='',sublength=80):

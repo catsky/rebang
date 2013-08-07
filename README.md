@@ -27,8 +27,8 @@ Yes. Here is the link: [http://australian.sinaapp.com](http://australian.sinaapp
 4. enable **MySQL** on your sinaapp
 5. enable **Storage** on your sinaapp, and create a new domain with name of **attachment**, remember set the anti-stealing-link to false
 6. upload the folder of '1' to your sinaapp via SVN
-6. access the homepage of your app, db schema will be creatd automatically. 
-7. Done and enjoy:)
+7. access the homepage of your app, db schema will be created automatically. 
+8. Done and enjoy:)
 
 ## Having Problems getting set up?
 Any issues, please contact me via zhdhui at gmail.com

@@ -194,7 +194,6 @@ class OperatorDB:
 		db.session.commit()
 
 	def updateDuoshuoCommentsNum(self, page):
-<<<<<<< HEAD
 		try:
 			posts = Article.query.order_by(Article._add_time.desc())[EACH_PAGE_POST_NUM*(page-1):EACH_PAGE_POST_NUM*page]
 			for post in posts:
@@ -211,19 +210,6 @@ class OperatorDB:
 			logging.error("!!fail!! exception happend in updateDuoshuoCommentsNum: %s"%e)
 		finally:
 			db.session.close()
-=======
-		posts = Article.query.order_by(Article._add_time.desc())[EACH_PAGE_POST_NUM*(page-1):EACH_PAGE_POST_NUM*page]
-		for post in posts:
-			r=requests.get('http://api.duoshuo.com/threads/counts.json?short_name=rebang&threads=%s'%post._id)
-			coments_num = -1
-			if r.status_code == 200:
-				json_r = json.loads(r.content)
-				if json_r["code"] == 0 and json_r['response'] != []:
-					coments_num = json_r['response'][str(post._id)]['comments']
-			if coments_num != -1:
-				post._comment_num = coments_num
-		db.session.commit()
->>>>>>> 5517d2b511ab78c6f9b72a2f5360437755334a50
 #operator Article 2012/6/7
 	def get_post_page(self, page):
 		self.updateDuoshuoCommentsNum(page)
@@ -231,14 +217,11 @@ class OperatorDB:
 		posts = Article.query.filter(Article._post_type.in_([0, 1])).order_by(Article._add_time.desc()).paginate(page, EACH_PAGE_POST_NUM, False)
 		db.session.close()
 		return posts
-<<<<<<< HEAD
 	
 	def get_weixin_articles(self, num=3):
 		posts = Article.query.filter(Article._post_type.in_([0, 1])).order_by(Article._add_time.desc())[:num]
 		db.session.close()
 		return posts
-=======
->>>>>>> 5517d2b511ab78c6f9b72a2f5360437755334a50
 		#return Article.query.order_by(Article._add_time.desc()).all()[_start:_end],_newer,_older
 	
 	def get_editor_post(self,_start=0,_end=3):

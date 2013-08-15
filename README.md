@@ -9,6 +9,7 @@ A tiny and beautiful blog system using Flask, SQLAlchemy,
 - deployed on China Cloud Computing platform: **Sinaapp**
 - using **MySQL** to store the data of article
 - using Sinaapp **Storage** Module to store the picture, and the thumbnail as well
+- leverage the python crawler to download the articles. The crawler is also availible on GIT [https://github.com/catsky/auCrawler](https://github.com/catsky/auCrawler)
 
 
 ## Is there a live Demo?

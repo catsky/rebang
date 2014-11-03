@@ -1,6 +1,6 @@
 rebang
 ======
-
+![](https://github.com/catsky/rebang/blob/master/screenshot.png)
 A tiny and beautiful blog system using Flask, SQLAlchemy,
 
 - a blog system to manage your articles, with beautiful thumbnail overview
@@ -20,7 +20,6 @@ Yes. Here is the link: [http://australian.sinaapp.com](http://australian.sinaapp
 1. to be a simple and beautiful blog system
 2. interact with Weixin (a.k.a WeChat)
 3. automate the article publishing via scrapy (or sinaapp fetching service)
-
 ## How to deploy on Sinaapp?
 1. create a python app **you_app_name** on http://sae.sina.com.cn
 2. update the attribute value of "name" to **you_app_name** in the file of australian\1\config.yaml
